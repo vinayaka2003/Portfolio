@@ -1,65 +1,130 @@
+import Link from "next/link";
 import Image from "next/image";
+import HeroClient from "./components/HomeClient";
+import BlogCard from "@/components/BlogCard";
+import { projects } from '@/lib/projects';
+import { getAllPosts } from '@/lib/blog';
+
+export const revalidate = 86400;
 
 export default function Home() {
+  const days = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
+
+  const featuredCandidates = projects.filter((p) => p.featured);
+  const featuredProject = featuredCandidates.length
+    ? featuredCandidates[days % featuredCandidates.length]
+    : projects[days % projects.length];
+
+  const projectTags = featuredProject?.stack ? featuredProject.stack.split(' · ').slice(0, 4) : [];
+
+  const postsRaw = getAllPosts();
+  const postsToShow = [];
+  if (postsRaw.length > 0) {
+    const start = (days * 2) % postsRaw.length;
+    postsToShow.push(postsRaw[start]);
+    if (postsRaw.length > 1) postsToShow.push(postsRaw[(start + 1) % postsRaw.length]);
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-white dark:bg-transparent text-black dark:text-foreground overflow-x-hidden">
+      <HeroClient />
+
+      <section className="border-b border-gray-100 dark:border-border">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-28">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-10">
+            <div className="flex-1">
+              <p className="text-xs uppercase tracking-[0.25em] text-gray-400 mb-4">
+                Featured Project
+              </p>
+              <div className="rounded-3xl border border-gray-200 dark:border-border bg-white/80 dark:bg-surface/80 p-8 shadow-sm hover:shadow-md transition">
+                <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+                  <div className="space-y-6">
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="text-xs uppercase tracking-[0.25em] text-gray-500 dark:text-muted">Today’s pick</span>
+                      <span className="inline-flex items-center rounded-full bg-black text-white text-[10px] font-semibold uppercase px-3 py-1.5">
+                        Featured
+                      </span>
+                    </div>
+
+                    <div>
+                      <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-5 text-slate-900 dark:text-white">
+                        {featuredProject?.title ?? 'Featured Project'}
+                      </h2>
+                      <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {featuredProject?.desc ?? 'A selected project from the portfolio.'}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {projectTags.map((item) => (
+                        <span key={item} className="inline-flex items-center rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-row gap-3 sm:gap-4 w-full sm:w-auto mt-4">
+                      <Link href="/projects" className="flex-1 sm:flex-none inline-flex items-center justify-center rounded-full bg-black px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium text-white hover:opacity-90 transition whitespace-nowrap">
+                        View Project
+                      </Link>
+                      <a href={featuredProject?.github ?? '#'} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none inline-flex items-center justify-center rounded-full border border-gray-200 px-4 sm:px-5 py-3 text-xs sm:text-sm text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-200 dark:hover:bg-white/5 transition whitespace-nowrap">
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-border bg-slate-50 dark:bg-slate-900">
+                    <Image
+                      src="/featured-project.svg"
+                      alt="Featured project illustration"
+                      width={560}
+                      height={360}
+                      className="h-full w-full object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="border-b border-gray-100 dark:border-border">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-28">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-10">
+            <div>
+              <p className="text-xs uppercase tracking-[0.25em] text-gray-400 mb-3">Writing</p>
+              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white">Latest articles</h2>
+            </div>
+            <Link href="/blog" className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition">
+              More posts →
+            </Link>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {postsToShow.map((post) => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-24">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-3">Let’s connect.</h2>
+              <p className="text-gray-500 dark:text-muted max-w-lg leading-relaxed">
+                Interested in AI, automation, and building useful software.
+              </p>
+            </div>
+            <Link href="/contact" className="px-6 py-3 border border-gray-200 dark:border-border rounded-xl text-sm hover:bg-gray-50 dark:hover:bg-surface-hover dark:hover:text-foreground transition w-fit">
+              Contact
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
