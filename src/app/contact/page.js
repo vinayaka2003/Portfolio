@@ -1,6 +1,24 @@
 export const metadata = {
   title: "Contact — Vinayaka | Get in Touch",
-  description: "Ready to collaborate? Contact Vinayaka for freelance projects, partnerships, and discussions about AI and SaaS development.",
+  description: "Ready to collaborate? Contact Vinayaka for freelance projects, partnerships, and discussions about AI, SaaS, and full-stack development.",
+  keywords: ['Contact', 'Collaboration', 'Freelance', 'Hire Developer', 'AI Projects', 'SaaS Development', 'Full-Stack Development', 'Partnership', 'Consulting'],
+  openGraph: {
+    title: 'Contact — Vinayaka | Get in Touch',
+    description: 'Ready to collaborate? Contact Vinayaka for freelance projects, partnerships, and discussions about AI and SaaS development.',
+    url: 'https://vinayaka.dev/contact',
+    type: 'website',
+    locale: 'en_US',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact Vinayaka' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact — Vinayaka | Get in Touch',
+    description: 'Ready to collaborate? Contact Vinayaka for freelance projects, partnerships, and discussions about AI and SaaS development.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://vinayaka.dev/contact'
+  }
 };
 
 const socials = [
@@ -78,9 +96,8 @@ export default function Contact() {
 
         <form
           className="max-w-lg space-y-4"
-          action="mailto:vinayakayattinamane@gmail.com"
+          action="https://formspree.io/f/xqejrlvn"
           method="POST"
-          encType="text/plain"
         >
           <div className="grid sm:grid-cols-2 gap-4">
             <div>

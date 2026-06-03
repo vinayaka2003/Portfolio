@@ -1,6 +1,24 @@
 export const metadata = {
   title: "Projects — Vinayaka | AI & SaaS Portfolio",
-  description: "Explore Vinayaka's portfolio of AI/ML projects including AI Resume Analyzer, AutoFlow SaaS platform, and more. Full-stack development with Python and React.",
+  description: "Explore AI/ML projects, SaaS platforms, and full-stack applications. AutoFlow, AI Resume Analyzer, and more built with Python, React, and FastAPI.",
+  keywords: ['Projects', 'Portfolio', 'AI Resume Analyzer', 'AutoFlow', 'SaaS', 'Full-Stack', 'Python', 'React', 'Machine Learning', 'Open Source', 'GitHub'],
+  openGraph: {
+    title: 'Projects — Vinayaka | AI & SaaS Portfolio',
+    description: 'Explore AI/ML projects, SaaS platforms, and full-stack applications built with Python, React, and FastAPI.',
+    url: 'https://vinayaka.dev/projects',
+    type: 'website',
+    locale: 'en_US',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Vinayaka Projects' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Projects — Vinayaka | AI & SaaS Portfolio',
+    description: 'Explore AI/ML projects, SaaS platforms, and full-stack applications built with Python, React, and FastAPI.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://vinayaka.dev/projects'
+  }
 };
 
 import { projects } from '@/lib/projects';

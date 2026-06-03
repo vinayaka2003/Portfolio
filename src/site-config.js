@@ -1,3 +1,9 @@
-export const siteUrl = 'https://vinay-portfolio.com'; // Adjust to your actual domain
-export const siteName = 'Vinay Portfolio';
-export const siteDescription = 'A premium portfolio and blog built with Next.js and MDX.';
+export const siteUrl = 'https://vinayaka.dev';
+export const siteName = 'Vinayaka';
+export const siteDescription = 'Full-stack developer portfolio. AI, SaaS, automation, and modern web technologies.';
+
+export const author = {
+  name: 'Vinayaka',
+  email: 'vinayakayattinamane@gmail.com',
+  url: 'https://vinayaka.dev'
+};
