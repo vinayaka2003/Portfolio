@@ -6,7 +6,7 @@ import { formatDate } from '@/lib/blog';
 export default function BlogCard({ post }) {
   return (
     <Link href={`/blog/${post.slug}`} className="block group">
-      <article className="p-6 bg-surface-light dark:bg-surface rounded-lg shadow-sm hover:shadow-lg transition h-full flex flex-col border border-transparent dark:border-border hover:border-primary-light dark:hover:border-white/35">
+      <article className="p-6 bg-surface-light dark:bg-surface rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col border border-transparent dark:border-white/5 dark:bg-surface/40 backdrop-blur-sm hover:border-primary-light dark:hover:border-white/15 dark:hover:bg-surface/75 dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
         <h2 className="text-2xl font-semibold mb-2 group-hover:text-primary-light dark:group-hover:text-foreground">
           {post.title}
         </h2>

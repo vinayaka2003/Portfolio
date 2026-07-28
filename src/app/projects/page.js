@@ -21,41 +21,70 @@ export const metadata = {
   }
 };
 
+import { ArrowUpRight } from 'lucide-react';
 import { projects } from '@/lib/projects';
 
 export default function Projects() {
   return (
-    <>
-      <section className="px-6 md:px-10 py-20">
-        <p className="text-xs text-gray-400 uppercase tracking-widest mb-10">Projects</p>
-        <div className="grid md:grid-cols-2 gap-5">
-          {projects.map(({ title, stack, desc, github, demo, featured }) => (
-            <div
-              key={title}
-              className="border border-gray-200 dark:border-border rounded-2xl p-6 hover:border-gray-400 dark:hover:border-white/35 transition duration-200 bg-white dark:bg-surface/80"
+    <section className="px-6 md:px-10 py-20">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12 max-w-2xl">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Projects</p>
+          <h1 className="mb-3 text-3xl font-semibold tracking-tight text-slate-900 dark:text-foreground md:text-4xl">
+            Selected work
+          </h1>
+          <p className="text-sm leading-relaxed text-gray-600 dark:text-muted md:text-base">
+            A collection of projects spanning web, AI, and data.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {projects.map((project) => (
+            <article
+              key={project.title}
+              className="group rounded-2xl border border-gray-200/60 bg-white/50 p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 dark:border-white/5 dark:bg-surface/40 backdrop-blur-sm dark:hover:border-white/15 dark:hover:bg-surface/75 dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
             >
-              {featured && (
-                <span className="inline-block text-xs px-2 py-0.5 bg-gray-100 dark:bg-white/8 text-gray-700 dark:text-foreground border border-gray-200 dark:border-white/10 rounded-md mb-3">
-                  Featured
-                </span>
-              )}
-              <div className="flex flex-wrap gap-2 mb-3">
-                {stack.split(' · ').map((tech) => (
-                  <span key={tech} className="text-[10px] font-medium px-2.5 py-1 bg-gray-100 dark:bg-surface-hover text-gray-700 dark:text-muted rounded-md">
+              <div className="mb-3 sm:mb-4 flex items-start justify-between">
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-foreground">{project.title}</h3>
+                  <p className="text-[11px] sm:text-xs text-gray-500 dark:text-muted">{project.category} • {project.year}</p>
+                </div>
+              </div>
+
+              <p className="mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed text-gray-600 dark:text-muted">{project.desc}</p>
+
+              <div className="mb-3 sm:mb-4 flex flex-wrap gap-1.5">
+                {project.stack.split(' · ').map((tech) => (
+                  <span key={tech} className="rounded text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 bg-gray-100 text-gray-700 dark:bg-white/10 dark:text-muted">
                     {tech}
                   </span>
                 ))}
               </div>
-              <h3 className="text-lg font-medium mb-2 dark:text-foreground">{title}</h3>
-              <p className="text-sm text-gray-500 dark:text-muted leading-relaxed mb-5">{desc}</p>
-              <div className="flex gap-5 mt-auto">
-                <a href={github} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 dark:text-muted hover:text-black dark:hover:text-foreground transition-colors">GitHub ↗</a>
-                <a href={demo} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 dark:text-muted hover:text-black dark:hover:text-foreground transition-colors">Live demo ↗</a>
+
+              <div className="flex flex-wrap gap-2.5">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs sm:text-sm text-gray-700 transition hover:text-black dark:text-muted dark:hover:text-foreground"
+                >
+                  GitHub <ArrowUpRight className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs sm:text-sm text-gray-700 transition hover:text-black dark:text-muted dark:hover:text-foreground"
+                  >
+                    Demo <ArrowUpRight className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                  </a>
+                )}
               </div>
-            </div>
+            </article>
           ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

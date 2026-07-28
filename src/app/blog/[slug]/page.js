@@ -74,6 +74,3 @@ export default async function PostPage({ params }) {
     </Layout>
   );
 }
-
-<div>
-</div>

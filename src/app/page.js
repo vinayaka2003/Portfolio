@@ -30,58 +30,45 @@ export default function Home() {
       <HeroClient />
 
       <section className="border-b border-gray-100 dark:border-border">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-28">
           <div className="flex flex-col lg:flex-row lg:items-center gap-10">
             <div className="flex-1">
               <p className="text-xs uppercase tracking-[0.25em] text-gray-400 mb-4">
                 Featured Project
               </p>
-              <div className="rounded-3xl border border-gray-200 dark:border-border bg-white/80 dark:bg-surface/80 p-8 shadow-sm hover:shadow-md transition">
-                <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
-                  <div className="space-y-6">
-                    <div className="flex items-center justify-between gap-4">
-                      <span className="text-xs uppercase tracking-[0.25em] text-gray-500 dark:text-muted">Today’s pick</span>
-                      <span className="inline-flex items-center rounded-full bg-black text-white text-[10px] font-semibold uppercase px-3 py-1.5">
-                        Featured
-                      </span>
-                    </div>
-
-                    <div>
-                      <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-5 text-slate-900 dark:text-white">
-                        {featuredProject?.title ?? 'Featured Project'}
-                      </h2>
-                      <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {featuredProject?.desc ?? 'A selected project from the portfolio.'}
-                      </p>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                      {projectTags.map((item) => (
-                        <span key={item} className="inline-flex items-center rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex flex-row gap-3 sm:gap-4 w-full sm:w-auto mt-4">
-                      <Link href="/projects" className="flex-1 sm:flex-none inline-flex items-center justify-center rounded-full bg-black px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium text-white hover:opacity-90 transition whitespace-nowrap">
-                        View Project
-                      </Link>
-                      <a href={featuredProject?.github ?? '#'} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none inline-flex items-center justify-center rounded-full border border-gray-200 px-4 sm:px-5 py-3 text-xs sm:text-sm text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-200 dark:hover:bg-white/5 transition whitespace-nowrap">
-                        GitHub
-                      </a>
-                    </div>
+              <div className="rounded-3xl border border-gray-200/60 bg-white/80 p-5 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 dark:border-white/5 dark:bg-surface/40 backdrop-blur-sm dark:hover:border-white/15 dark:hover:bg-surface/75 dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-gray-500 dark:text-muted">Today’s pick</span>
+                    <span className="inline-flex items-center rounded-full bg-black text-white text-[9px] sm:text-[10px] font-semibold uppercase px-2.5 py-1 sm:px-3 sm:py-1.5">
+                      Featured
+                    </span>
                   </div>
 
-                  <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-border bg-slate-50 dark:bg-slate-900">
-                    <Image
-                      src="/featured-project.svg"
-                      alt="Featured project illustration"
-                      width={560}
-                      height={360}
-                      className="h-full w-full object-cover"
-                      priority
-                    />
+                  <div>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-5 text-slate-900 dark:text-white">
+                      {featuredProject?.title ?? 'Featured Project'}
+                    </h2>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {featuredProject?.desc ?? 'A selected project from the portfolio.'}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {projectTags.map((item) => (
+                      <span key={item} className="inline-flex items-center rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs text-gray-600 dark:text-gray-300">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-row gap-3 sm:gap-4 w-full sm:w-auto mt-4">
+                    <Link href="/projects" className="flex-1 sm:flex-none inline-flex items-center justify-center rounded-full bg-black px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white hover:opacity-90 transition whitespace-nowrap">
+                      View Project
+                    </Link>
+                    <a href={featuredProject?.github ?? '#'} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none inline-flex items-center justify-center rounded-full border border-gray-200 px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-200 dark:hover:bg-white/5 transition whitespace-nowrap">
+                      GitHub
+                    </a>
                   </div>
                 </div>
               </div>

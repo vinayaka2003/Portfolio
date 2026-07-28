@@ -64,8 +64,8 @@ function TechCard({ name, logo }) {
       variants={fadeUp}
       className="
         relative group flex items-center gap-3 p-3 rounded-xl 
-        bg-white/5 dark:bg-black/20 border border-black/5 dark:border-white/5 
-        hover:border-emerald-500/30 transition-all duration-300
+        bg-white/50 dark:bg-surface/30 border border-gray-200/40 dark:border-white/5 
+        hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-300
         overflow-hidden backdrop-blur-md cursor-default
       "
     >
@@ -99,7 +99,7 @@ function ExpertiseCard({ title, desc, icon }) {
   return (
     <motion.div
       variants={fadeUp}
-      className="group p-6 rounded-2xl bg-white/50 dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:bg-white dark:hover:bg-white/[0.04] transition-colors shadow-sm hover:shadow-md"
+      className="group p-6 rounded-2xl bg-white/50 dark:bg-surface/40 border border-gray-200/60 dark:border-white/5 hover:bg-white dark:hover:bg-surface/75 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-md dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
     >
       <div className="w-12 h-12 flex items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-4 group-hover:scale-110 transition-transform duration-300">
         {icon}
@@ -112,7 +112,7 @@ function ExpertiseCard({ title, desc, icon }) {
 
 export default function AboutClient() {
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 selection:bg-emerald-500/30">
+    <div className="min-h-screen bg-background text-foreground selection:bg-emerald-500/30">
 
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -219,7 +219,7 @@ export default function AboutClient() {
             <motion.h3 variants={fadeUp} className="text-xl font-semibold text-zinc-900 dark:text-white mb-2">
               Tech Arsenal
             </motion.h3>
-            <motion.div variants={fadeUp} className="flex flex-col space-y-8 p-6 rounded-3xl bg-white/40 dark:bg-white/[0.02] border border-black/5 dark:border-white/5 backdrop-blur-sm">
+            <motion.div variants={fadeUp} className="flex flex-col space-y-8 p-6 rounded-3xl bg-white/40 dark:bg-surface/30 border border-gray-200/40 dark:border-white/5 backdrop-blur-sm">
               {stack.map((group) => (
                 <StackCategory key={group.category} {...group} />
               ))}
@@ -236,7 +236,7 @@ export default function AboutClient() {
           >
             <motion.div
               variants={fadeUp}
-              className="relative overflow-hidden rounded-3xl p-8 md:p-12 bg-zinc-900 dark:bg-white/5 border border-transparent dark:border-white/10 text-white dark:text-zinc-100 shadow-2xl"
+              className="relative overflow-hidden rounded-3xl p-8 md:p-12 bg-zinc-900 dark:bg-surface/40 border border-transparent dark:border-white/5 text-white dark:text-foreground shadow-2xl backdrop-blur-sm"
             >
               {/* Card Background Glow */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
@@ -255,8 +255,8 @@ export default function AboutClient() {
                   href="/contact"
                   className="
                     group relative inline-flex shrink-0 items-center justify-center gap-2 px-8 py-4 rounded-xl 
-                    bg-white dark:bg-white text-zinc-900 dark:text-zinc-900 font-semibold shadow-lg 
-                    hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden
+                    bg-white text-zinc-900 font-semibold shadow-lg 
+                    hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 overflow-hidden
                   "
                 >
                   <span className="relative z-10 flex items-center gap-2">

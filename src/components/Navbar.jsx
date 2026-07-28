@@ -28,7 +28,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="bg-white/80 dark:bg-surface/85 backdrop-blur-md border border-gray-200/50 dark:border-border rounded-2xl px-6 py-3 flex items-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] dark:shadow-[0_16px_42px_-24px_rgba(0,0,0,0.8)] transition-colors duration-300 h-12"
+          className="bg-white/95 dark:bg-surface/95 backdrop-blur-md border border-gray-300/80 dark:border-white/10 rounded-2xl px-6 py-3 flex items-center shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1),_0_1px_3px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7),_0_0_1px_rgba(255,255,255,0.15)] transition-all duration-300 h-12"
         >
           <Link href="/" className="text-lg font-bold tracking-tighter text-black dark:text-foreground hover:opacity-70 transition">
             Vinayaka S
@@ -40,7 +40,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.05 }}
-          className="hidden md:flex bg-white/80 dark:bg-surface/85 backdrop-blur-md border border-gray-200/50 dark:border-border rounded-2xl px-2.5 py-1.5 items-center gap-1 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] dark:shadow-[0_16px_42px_-24px_rgba(0,0,0,0.8)] transition-colors duration-300 h-12"
+          className="hidden md:flex bg-white/95 dark:bg-surface/95 backdrop-blur-md border border-gray-300/80 dark:border-white/10 rounded-2xl px-2.5 py-1.5 items-center gap-1 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1),_0_1px_3px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7),_0_0_1px_rgba(255,255,255,0.15)] transition-all duration-300 h-12"
         >
           {links.map(({ href, label }) => {
             const isActive = pathname === href;
@@ -72,7 +72,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
-          className="bg-white/80 dark:bg-surface/85 backdrop-blur-md border border-gray-200/50 dark:border-border rounded-2xl px-3 py-1.5 flex items-center gap-2 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] dark:shadow-[0_16px_42px_-24px_rgba(0,0,0,0.8)] transition-colors duration-300 h-12"
+          className="bg-white/95 dark:bg-surface/95 backdrop-blur-md border border-gray-300/80 dark:border-white/10 rounded-2xl px-3 py-1.5 flex items-center gap-2 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1),_0_1px_3px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7),_0_0_1px_rgba(255,255,255,0.15)] transition-all duration-300 h-12"
         >
           <AnimatedThemeToggler />
 
@@ -94,7 +94,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 15, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-20 left-4 right-4 bg-white/95 dark:bg-surface/95 backdrop-blur-lg border border-gray-200/60 dark:border-border rounded-3xl p-5 shadow-2xl z-40 md:hidden pointer-events-auto"
+            className="absolute top-20 left-4 right-4 bg-white dark:bg-surface backdrop-blur-lg border border-gray-300/80 dark:border-white/10 rounded-3xl p-5 shadow-2xl z-40 md:hidden pointer-events-auto"
           >
             <div className="flex flex-col gap-2">
               {links.map(({ href, label }) => {

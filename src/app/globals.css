@@ -3,25 +3,37 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: hsl(0, 0%, 99%);
+  --background: hsl(0, 0%, 97.5%);
   --foreground: hsl(0, 0%, 10%);
-  --border: hsl(0, 0%, 92%);
+  --border: hsl(0, 0%, 90%);
   --muted: hsl(0, 0%, 45%);
   --accent: hsl(0, 0%, 10%);
   --surface: hsl(0, 0%, 100%);
-  --surface-hover: hsl(0, 0%, 97%);
+  --surface-hover: hsl(0, 0%, 96%);
+  --primary-light: hsl(0, 0%, 10%);
+  --primary-dark: hsl(0, 0%, 100%);
+  --surface-light: hsl(0, 0%, 100%);
+  --surface-dark: hsl(0, 0%, 8.5%);
+  --muted-light: hsl(0, 0%, 93%);
+  --muted-dark: hsl(0, 0%, 60%);
   --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .dark {
-  --background: hsl(0, 0%, 4%);
-  --foreground: hsl(0, 0%, 94%);
-  --border: hsl(0, 0%, 17%);
-  --muted: hsl(0, 0%, 66%);
-  --accent: hsl(0, 0%, 100%);
-  --surface: hsl(0, 0%, 8%);
+  --background: hsl(0, 0%, 1.5%);
+  --foreground: hsl(0, 0%, 98%);
+  --border: hsl(0, 0%, 11%);
+  --muted: hsl(0, 0%, 60%);
+  --accent: hsl(0, 0%, 98%);
+  --surface: hsl(0, 0%, 8.5%);
   --surface-hover: hsl(0, 0%, 12%);
+  --primary-light: hsl(0, 0%, 98%);
+  --primary-dark: hsl(0, 0%, 1.5%);
+  --surface-light: hsl(0, 0%, 8.5%);
+  --surface-dark: hsl(0, 0%, 1.5%);
+  --muted-light: hsl(0, 0%, 11%);
+  --muted-dark: hsl(0, 0%, 60%);
   --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   --card-shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.28);
 }
@@ -34,6 +46,12 @@
   --color-accent: var(--accent);
   --color-surface: var(--surface);
   --color-surface-hover: var(--surface-hover);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-surface-light: var(--surface-light);
+  --color-surface-dark: var(--surface-dark);
+  --color-muted-light: var(--muted-light);
+  --color-muted-dark: var(--muted-dark);
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "Georgia", serif;
@@ -47,7 +65,7 @@ body {
 
 .dark body {
   background:
-    linear-gradient(180deg, hsl(0, 0%, 7%) 0%, var(--background) 34rem),
+    radial-gradient(ellipse 60% 40% at 50% -10%, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0)),
     var(--background);
 }
 

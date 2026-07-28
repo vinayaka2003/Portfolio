@@ -69,7 +69,7 @@ export default function Contact() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 px-4 py-4 border border-gray-200 dark:border-border rounded-xl hover:border-gray-400 dark:hover:border-white/35 transition bg-white dark:bg-surface/80"
+              className="flex items-center gap-4 px-4 py-4 border border-gray-200/60 dark:border-white/5 rounded-xl hover:border-gray-400 dark:hover:border-white/15 transition-all duration-300 hover:-translate-y-0.5 bg-white dark:bg-surface/40 backdrop-blur-sm dark:hover:bg-surface/75 dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
             >
               <div className="flex h-8 w-8 items-center justify-center text-xl text-black dark:text-foreground">
                 {icon}
@@ -110,7 +110,7 @@ export default function Contact() {
                 name="name"
                 type="text"
                 placeholder="Your name"
-                className="w-full px-4 py-2.5 border border-gray-200 dark:border-border rounded-lg text-sm focus:outline-none focus:border-gray-400 dark:focus:border-white/60 bg-white dark:bg-surface text-black dark:text-foreground placeholder-gray-400 dark:placeholder-gray-500"
+                className="w-full px-4 py-2.5 border border-gray-200/80 dark:border-white/5 rounded-lg text-sm focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-black/10 dark:focus:border-white/20 dark:focus:ring-white/5 bg-white/50 dark:bg-surface/40 text-black dark:text-foreground placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-200"
               />
             </div>
 
@@ -124,7 +124,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 placeholder="your@email.com"
-                className="w-full px-4 py-2.5 border border-gray-200 dark:border-border rounded-lg text-sm focus:outline-none focus:border-gray-400 dark:focus:border-white/60 bg-white dark:bg-surface text-black dark:text-foreground placeholder-gray-400 dark:placeholder-gray-500"
+                className="w-full px-4 py-2.5 border border-gray-200/80 dark:border-white/5 rounded-lg text-sm focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-black/10 dark:focus:border-white/20 dark:focus:ring-white/5 bg-white/50 dark:bg-surface/40 text-black dark:text-foreground placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-200"
               />
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function Contact() {
               name="message"
               rows={5}
               placeholder="What's on your mind?"
-              className="w-full px-4 py-2.5 border border-gray-200 dark:border-border rounded-lg text-sm focus:outline-none focus:border-gray-400 dark:focus:border-white/60 resize-none bg-white dark:bg-surface text-black dark:text-foreground placeholder-gray-400 dark:placeholder-gray-500"
+              className="w-full px-4 py-2.5 border border-gray-200/80 dark:border-white/5 rounded-lg text-sm focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-black/10 dark:focus:border-white/20 dark:focus:ring-white/5 resize-none bg-white/50 dark:bg-surface/40 text-black dark:text-foreground placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-200"
             />
           </div>
 
