@@ -41,7 +41,7 @@ export default function BlogPage() {
           </div>
         ) : (
           <div className="py-20 text-center">
-            <p className="text-lg text-muted-light dark:text-muted-dark">No posts found yet. Check back soon!</p>
+            <p className="text-lg text-gray-500 dark:text-muted">No posts found yet. Check back soon!</p>
           </div>
         )}
       </section>

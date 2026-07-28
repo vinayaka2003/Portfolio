@@ -10,8 +10,8 @@ export default function BlogCard({ post }) {
         <h2 className="text-2xl font-semibold mb-2 group-hover:text-primary-light dark:group-hover:text-foreground">
           {post.title}
         </h2>
-        <p className="text-muted-light dark:text-muted-dark flex-grow">{post.description || post.excerpt}</p>
-        <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-muted-light dark:text-muted-dark">
+        <p className="text-gray-600 dark:text-muted flex-grow">{post.description || post.excerpt}</p>
+        <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-muted">
           <span>{formatDate(post.date)}</span>
           <span className="text-primary-light dark:text-primary-dark">·</span>
           <span>{post.readingTime}</span>
