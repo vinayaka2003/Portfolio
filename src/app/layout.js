@@ -1,9 +1,20 @@
 import "./globals.css";
 import Providers from "@/components/ThemeProvider";
 import LayoutWrapper from "@/components/LayoutWrapper";
-import { Inter } from "next/font/google";
+import { Newsreader, Plus_Jakarta_Sans } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+  style: ["normal", "italic"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const viewport = { width: "device-width", initialScale: 1 };
 
@@ -56,7 +67,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en" className={`${plusJakartaSans.variable} ${newsreader.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
