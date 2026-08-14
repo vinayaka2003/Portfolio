@@ -5,7 +5,7 @@ export default function sitemap() {
     { path: "/", priority: 1.0, changeFrequency: "monthly" },
     { path: "/about", priority: 0.8, changeFrequency: "monthly" },
     { path: "/projects", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+    { path: "/achievements", priority: 0.8, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.6, changeFrequency: "yearly" },
   ];
 

@@ -6,8 +6,8 @@ export default function Providers({ children }) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="light"
-      enableSystem={false}
+      defaultTheme="system"
+      enableSystem={true}
       storageKey="vinayaka-theme"
     >
       {children}

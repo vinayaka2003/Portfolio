@@ -84,7 +84,6 @@ export const projects = [
       "Scalable architecture"
     ],
     github: "https://github.com/vinayaka2003/digital-store",
-    demo: "https://your-digital-store.vercel.app",
     accent: "from-indigo-500 via-violet-500 to-fuchsia-600",
     featured: true,
   },
@@ -105,6 +104,38 @@ export const projects = [
     github: "https://github.com/vinayaka2003/habee-craft",
     demo: "https://habeecraft.vercel.app",
     accent: "from-pink-500 via-rose-500 to-orange-500",
+    featured: true,
+  },
+  {
+    title: "RoadAssist",
+    stack: "React · Node.js · Express · Leaflet · Socket.io",
+    category: "Utility app",
+    year: "2025",
+    desc: "A real-time roadside assistance platform connecting stranded motorists with nearby towing and support services using live GPS tracking.",
+    impact: "Drastically reduces service dispatch times and driver response friction.",
+    highlights: [
+      "Real-time GPS tracking with Leaflet maps",
+      "Live WebSocket updates via Socket.io",
+      "Stranded driver instant reporting dashboard"
+    ],
+    github: "https://github.com/vinayaka2003/road-assist",
+    accent: "from-emerald-500 via-teal-500 to-cyan-600",
+    featured: true,
+  },
+  {
+    title: "AI Resume Analyzer",
+    stack: "Python · OpenAI API · Flask · PDFMiner · React",
+    category: "AI workflow",
+    year: "2025",
+    desc: "An intelligent resume evaluation system that parses resumes, assesses matching scores against job descriptions, and provides ATS optimization suggestions.",
+    impact: "Empowers job seekers to optimize their resumes for automated sorting systems.",
+    highlights: [
+      "Automated PDF parsing and text extraction",
+      "OpenAI GPT-backed scoring and suggestions",
+      "Skills gap identification dashboard"
+    ],
+    github: "https://github.com/vinayaka2003/ai-resume-analyzer",
+    accent: "from-indigo-500 via-violet-500 to-fuchsia-600",
     featured: true,
   },
 ];

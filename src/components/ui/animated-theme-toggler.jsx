@@ -73,10 +73,47 @@ export function AnimatedThemeToggler({ sound = true }) {
   // Determine dark mode state using next-themes
   const isDark = mounted && resolvedTheme === "dark";
 
-  const toggle = () => {
+  const toggle = (event) => {
     if (!mounted) return;
-    setTheme(isDark ? "light" : "dark");
-    if (sound) tick(lastSnd);
+
+    // Fallback if browser doesn't support View Transitions API
+    if (!document.startViewTransition) {
+      setTheme(isDark ? "light" : "dark");
+      if (sound) tick(lastSnd);
+      return;
+    }
+
+    const x = event.clientX ?? (event.currentTarget.getBoundingClientRect().left + 16);
+    const y = event.clientY ?? (event.currentTarget.getBoundingClientRect().top + 16);
+
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    const transition = document.startViewTransition(() => {
+      setTheme(isDark ? "light" : "dark");
+      if (sound) tick(lastSnd);
+    });
+
+    transition.ready.then(() => {
+      const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${endRadius}px at ${x}px ${y}px)`
+      ];
+      document.documentElement.animate(
+        {
+          clipPath: isDark ? [...clipPath].reverse() : clipPath,
+        },
+        {
+          duration: 400,
+          easing: "ease-out",
+          pseudoElement: isDark
+            ? "::view-transition-old(root)"
+            : "::view-transition-new(root)",
+        }
+      );
+    });
   };
 
   const spring = hasAnimated

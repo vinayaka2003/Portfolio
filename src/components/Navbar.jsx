@@ -4,20 +4,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import AnimatedThemeToggler from "@/components/ui/animated-theme-toggler";
 
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
+  { href: "/achievements", label: "Achievements" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  if (pathname === "/" || pathname === "/about" || pathname === "/projects" || pathname === "/achievements" || pathname === "/contact" || pathname === "/resume") return null;
 
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 w-full pointer-events-none">
@@ -48,7 +50,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 ${isActive
+                className={`relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-1.5 ${isActive
                   ? "text-black dark:text-foreground"
                   : "text-gray-400 hover:text-black dark:text-muted dark:hover:text-foreground"
                   }`}
@@ -61,7 +63,7 @@ export default function Navbar() {
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                {label}
+                <span>{label}</span>
               </Link>
             );
           })}
@@ -74,6 +76,14 @@ export default function Navbar() {
           transition={{ duration: 0.3, delay: 0.1 }}
           className="bg-white/95 dark:bg-surface/95 backdrop-blur-md border border-gray-300/80 dark:border-white/10 rounded-2xl px-3 py-1.5 flex items-center gap-2 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1),_0_1px_3px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7),_0_0_1px_rgba(255,255,255,0.15)] transition-all duration-300 h-12"
         >
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-search"))}
+            className="p-2 rounded-xl text-gray-400 dark:text-muted hover:text-black dark:hover:text-foreground hover:bg-gray-100 dark:hover:bg-surface-hover transition-colors flex items-center gap-1.5"
+            aria-label="Open Search"
+          >
+            <Search size={18} />
+          </button>
+
           <AnimatedThemeToggler />
 
           <button
