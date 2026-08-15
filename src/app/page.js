@@ -29,7 +29,7 @@ export default function Home() {
     <div className="pt-6 sm:pt-8 lg:pt-10 pb-2 font-serif antialiased">
       {/* Hero Heading - Dynamic scale with optical line breaks */}
       <h1 className="max-w-[850px] text-[clamp(2.15rem,5.5vw,3.75rem)] font-bold tracking-[-0.03em] leading-[0.98] mb-10 font-serif text-foreground">
-        Accidental Software Developer.
+        <span className="text-red-600 dark:text-red-500">Accidental</span> Software Developer<span className="text-red-600 dark:text-red-500">.</span>
       </h1>
 
       {/* Story Paragraphs */}
