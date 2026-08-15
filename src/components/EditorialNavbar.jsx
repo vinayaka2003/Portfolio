@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
+import { Search } from "lucide-react";
 const AnimatedThemeToggler = dynamic(() => import("@/components/ui/animated-theme-toggler"), { ssr: false });
 
 const links = [
@@ -82,22 +83,20 @@ export default function EditorialNavbar() {
         </div>
 
         {/* Search & Theme Controls Group */}
-        <div className="flex flex-col gap-3.5 pb-5 border-b border-border/40">
+        <div className="flex items-center gap-2 pb-5 border-b border-border/40 select-none">
           {/* Quick Search Trigger */}
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("open-search"))}
-            className="w-full text-left py-1 flex items-center justify-between text-muted/85 hover:text-foreground text-[11px] font-sans font-semibold uppercase tracking-[0.1em] select-none focus:outline-none cursor-pointer"
+            className="p-2 rounded-lg hover:bg-border/30 text-muted hover:text-foreground transition-all duration-200 focus:outline-none cursor-pointer"
+            aria-label="Search (⌘K)"
+            title="Search (⌘K)"
           >
-            <span>Search</span>
-            <span className="text-[9px] font-mono bg-border/40 text-muted/95 px-1.5 py-0.5 rounded border border-border/60">⌘K</span>
+            <Search className="w-[18px] h-[18px]" />
           </button>
 
           {/* Premium Animated Theme Toggle */}
-          <div className="flex items-center gap-1 w-full -ml-2">
+          <div className="flex items-center" title="Toggle theme">
             <AnimatedThemeToggler />
-            <span className="text-[10.5px] text-muted uppercase tracking-[0.14em] font-semibold select-none">
-              {mounted ? (isDark ? "Dark Mode" : "Light Mode") : "Mode"}
-            </span>
           </div>
         </div>
 
