@@ -118,12 +118,6 @@ export default function EditorialNavbar() {
             );
           })}
         </nav>
-
-        {/* Status Indicator */}
-        <div className="mt-6 pt-5 border-t border-border/40 text-[9.5px] font-sans font-bold uppercase tracking-[0.14em] text-muted/80 flex items-center gap-1.5 select-none">
-          <span className="w-1.5 h-1.5 rounded-full bg-red-600 dark:bg-red-500 animate-pulse shrink-0" />
-          <span>Available for work</span>
-        </div>
       </div>
 
       {/* Mobile Top Header (< md) */}
@@ -271,12 +265,6 @@ export default function EditorialNavbar() {
                   </Link>
                 );
               })}
-            </div>
-
-            {/* Status Indicator */}
-            <div className="mt-4 pt-4 border-t border-border/40 text-[9px] font-sans font-bold uppercase tracking-[0.14em] text-muted/80 flex items-center justify-center gap-1.5 select-none">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-600 dark:bg-red-500 animate-pulse shrink-0" />
-              <span>Available for work</span>
             </div>
           </nav>
         </>
