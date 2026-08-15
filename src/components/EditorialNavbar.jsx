@@ -113,11 +113,6 @@ export default function EditorialNavbar() {
                   }
                 `}
               >
-                <span className={`text-[10px] font-mono tracking-normal transition-colors
-                  ${isActive ? "text-red-600 dark:text-red-500 font-bold" : "text-muted/50 group-hover:text-foreground/80"}
-                `}>
-                  {link.num}
-                </span>
                 <span>{link.label}</span>
               </Link>
             );
@@ -269,14 +264,7 @@ export default function EditorialNavbar() {
                       }
                     `}
                   >
-                    <div className="flex items-center gap-2.5">
-                      <span className={`text-[10px] font-mono tracking-normal
-                        ${isActive ? "text-red-600 dark:text-red-500 font-bold" : "text-muted/40"}
-                      `}>
-                        {link.num}
-                      </span>
-                      <span>{link.label}</span>
-                    </div>
+                    <span>{link.label}</span>
                     {isActive && (
                       <span className="text-[10px] text-accent">●</span>
                     )}
