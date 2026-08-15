@@ -188,52 +188,90 @@ export default function EditorialNavbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown (< md) */}
+      {/* Mobile Menu Drawer (< md) */}
       {menuOpen && (
-        <nav
-          id="mobile-menu"
-          ref={menuRef}
-          aria-label="Mobile navigation"
-          className="
-            absolute top-full right-0 z-50
-            w-[240px]
-            bg-background/95 dark:bg-background/95 backdrop-blur-md border border-border/80
-            rounded-2xl py-4 px-5 mt-2
-            shadow-lg
-            flex flex-col gap-3.5
-            text-[13.5px] font-semibold uppercase tracking-[0.08em] text-muted
-            motion-safe:animate-[fadeDown_0.15s_ease_forwards]
-            md:hidden
-          "
-        >
-          {/* Mobile Search Box */}
-          <div className="pb-3 border-b border-border/40 mb-1">
-            <SearchClient />
-          </div>
+        <>
+          {/* Backdrop Overlay */}
+          <div
+            className="fixed inset-0 z-40 bg-black/40 dark:bg-black/60 backdrop-blur-[3px] md:hidden animate-[fadeIn_0.2s_ease_out_forwards]"
+            onClick={() => setMenuOpen(false)}
+          />
 
-          {links.map((link) => {
-            const isActive =
-              pathname === link.href ||
-              (link.href !== "/" && pathname?.startsWith(link.href));
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
+          {/* Drawer Panel */}
+          <nav
+            id="mobile-menu"
+            ref={menuRef}
+            aria-label="Mobile navigation"
+            className="
+              fixed top-0 right-0 bottom-0 z-50
+              w-[260px] sm:w-[280px]
+              bg-background dark:bg-zinc-950 backdrop-blur-md border-l border-border/80 dark:border-white/10
+              py-6 px-6
+              shadow-2xl
+              flex flex-col gap-5
+              md:hidden
+              animate-[slideIn_0.25s_cubic-bezier(0.16,1,0.3,1)_forwards]
+            "
+          >
+            {/* Drawer Header (Logo + Close Button) */}
+            <div className="flex items-center justify-between pb-4 border-b border-border/40 mb-1 select-none">
+              <span className="font-sans text-[15px] font-black uppercase tracking-tighter text-foreground">
+                Vinayaka S
+              </span>
+              <button
                 onClick={() => setMenuOpen(false)}
-                className={`relative py-1 w-fit transition-colors duration-200 ease-out
-                  after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-accent after:transition-transform after:duration-300 after:ease-out after:origin-left
-                  ${
-                    isActive
-                      ? "text-foreground font-semibold after:scale-x-100"
-                      : "text-muted/80 hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
-                  }
-                `}
+                className="p-1 text-muted hover:text-foreground transition-colors focus:outline-none cursor-pointer"
+                aria-label="Close menu"
               >
-                <span>{link.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                  <line x1="3" y1="3" x2="15" y2="15" />
+                  <line x1="15" y1="3" x2="3" y2="15" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Mobile Search Box */}
+            <div className="pb-3.5 border-b border-border/40 select-none">
+              <SearchClient />
+            </div>
+
+            {/* Quick Controls Row (Theme Toggle) */}
+            <div className="flex items-center gap-2 pb-3.5 border-b border-border/40 select-none">
+              <AnimatedThemeToggler />
+              <span className="text-[11px] text-muted uppercase tracking-[0.14em] font-bold select-none">
+                {mounted ? (isDark ? "Dark Mode" : "Light Mode") : "Mode"}
+              </span>
+            </div>
+
+            {/* Links list */}
+            <div className="flex flex-col gap-1.5 pt-1">
+              {links.map((link) => {
+                const isActive =
+                  pathname === link.href ||
+                  (link.href !== "/" && pathname?.startsWith(link.href));
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-all duration-200 ease-out focus:outline-none
+                      ${
+                        isActive
+                          ? "bg-accent/10 dark:bg-accent/15 text-accent font-bold"
+                          : "text-muted hover:text-foreground hover:bg-border/30 dark:hover:bg-white/5"
+                      }
+                    `}
+                  >
+                    <span>{link.label}</span>
+                    {isActive && (
+                      <span className="text-[10px] text-accent">●</span>
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
+          </nav>
+        </>
       )}
     </header>
   );
