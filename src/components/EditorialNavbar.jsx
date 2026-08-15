@@ -29,6 +29,11 @@ export default function EditorialNavbar() {
     return () => cancelAnimationFrame(handle);
   }, []);
 
+  // Close on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   // Close on Escape key
   useEffect(() => {
     if (!menuOpen) return;
@@ -68,11 +73,11 @@ export default function EditorialNavbar() {
         <div className="flex flex-col select-none pb-5 border-b border-border/40">
           <Link
             href="/"
-            className="font-serif text-[15px] font-bold text-foreground hover:text-accent transition-colors leading-tight tracking-tight"
+            className="font-serif text-[18.5px] font-bold text-foreground hover:text-accent transition-colors leading-none tracking-tight"
           >
             Vinayaka S
           </Link>
-          <span className="text-[9.5px] text-muted/65 uppercase tracking-[0.12em] mt-1.5 font-sans font-semibold">
+          <span className="text-[11px] text-muted/75 uppercase tracking-[0.16em] mt-2 font-sans font-semibold">
             Software Developer
           </span>
         </div>
@@ -92,7 +97,7 @@ export default function EditorialNavbar() {
                   ${
                     isActive
                       ? "text-foreground font-semibold after:scale-x-100"
-                      : "text-muted hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
+                      : "text-muted/80 hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
                   }
                 `}
               >
@@ -115,7 +120,7 @@ export default function EditorialNavbar() {
       <div className="flex md:hidden justify-between items-center py-4 w-full border-b border-border/60">
         <Link
           href="/"
-          className="font-serif text-[15px] font-bold text-foreground hover:text-accent transition-colors tracking-tight whitespace-nowrap shrink-0"
+          className="font-serif text-[17px] font-bold text-foreground hover:text-accent transition-colors tracking-tight whitespace-nowrap shrink-0"
         >
           Vinayaka S
         </Link>
@@ -192,7 +197,7 @@ export default function EditorialNavbar() {
                   ${
                     isActive
                       ? "text-foreground font-semibold after:scale-x-100"
-                      : "text-muted hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
+                      : "text-muted/80 hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
                   }
                 `}
               >
