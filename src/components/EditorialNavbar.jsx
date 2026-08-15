@@ -81,6 +81,26 @@ export default function EditorialNavbar() {
           </Link>
         </div>
 
+        {/* Search & Theme Controls Group */}
+        <div className="flex flex-col gap-3.5 pb-5 border-b border-border/40">
+          {/* Quick Search Trigger */}
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-search"))}
+            className="w-full text-left py-1 flex items-center justify-between text-muted/85 hover:text-foreground text-[11px] font-sans font-semibold uppercase tracking-[0.1em] select-none focus:outline-none cursor-pointer"
+          >
+            <span>Search</span>
+            <span className="text-[9px] font-mono bg-border/40 text-muted/95 px-1.5 py-0.5 rounded border border-border/60">⌘K</span>
+          </button>
+
+          {/* Premium Animated Theme Toggle */}
+          <div className="flex items-center gap-1 w-full -ml-2">
+            <AnimatedThemeToggler />
+            <span className="text-[10.5px] text-muted uppercase tracking-[0.14em] font-semibold select-none">
+              {mounted ? (isDark ? "Dark Mode" : "Light Mode") : "Mode"}
+            </span>
+          </div>
+        </div>
+
         {/* Navigation Items - Single Flat List */}
         <nav className="flex flex-col gap-5 text-[13px] md:text-[13.5px] text-muted font-semibold uppercase tracking-[0.1em] pt-1" aria-label="Primary navigation">
           {links.map((link) => {
@@ -104,24 +124,7 @@ export default function EditorialNavbar() {
               </Link>
             );
           })}
-          
-          {/* Quick Search Shortcut Trigger */}
-          <button
-            onClick={() => window.dispatchEvent(new CustomEvent("open-search"))}
-            className="w-full text-left py-1.5 flex items-center justify-between text-muted/85 hover:text-foreground text-[11px] font-sans font-semibold uppercase tracking-[0.1em] border-t border-border/40 mt-4 select-none focus:outline-none cursor-pointer"
-          >
-            <span>Search</span>
-            <span className="text-[9px] font-mono bg-border/40 text-muted/95 px-1.5 py-0.5 rounded border border-border/60">⌘K</span>
-          </button>
         </nav>
-
-        {/* Premium Animated Theme Toggle */}
-        <div className="pt-4 border-t border-border/40 flex items-center gap-1 w-full -ml-2">
-          <AnimatedThemeToggler />
-          <span className="text-[10.5px] text-muted uppercase tracking-[0.14em] font-semibold select-none">
-            {mounted ? (isDark ? "Dark Mode" : "Light Mode") : "Mode"}
-          </span>
-        </div>
       </div>
 
       {/* Mobile Top Header (< md) */}
