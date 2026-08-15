@@ -75,12 +75,14 @@ export default function ResumePage() {
   const certificates = [
     "Google Advanced Data Analytics Professional Certificate (Coursera · 2024)",
     "Machine Learning Specialization (DeepLearning.AI · Coursera · 2024)",
+    "The Complete Full-Stack Web Development Bootcamp (Udemy · Dr. Angela Yu · 2024)",
     "Python for Data Science (IBM · Coursera · 2023)",
-    "The Complete Full-Stack Web Development Bootcamp (Udemy · Dr. Angela Yu · 2024)"
+    "The Complete SQL Bootcamp: Go from Zero to Hero (Udemy · Jose Portilla · 2023)",
+    "AWS Builders Online Series (Amazon Web Services · 2022)"
   ];
 
   return (
-    <div className="w-full bg-background text-foreground print:bg-white print:text-black selection:bg-teal-500/30">
+    <div className="w-full bg-background text-foreground print:bg-white print:text-black selection:bg-teal-500/30 pt-6 sm:pt-8 lg:pt-10 pb-2">
       
       {/* Dynamic Screen Controls Header */}
       <div className="flex justify-end mb-6 print:hidden">
@@ -129,7 +131,7 @@ export default function ResumePage() {
             
             {/* Section: Education */}
             <section className="space-y-4">
-              <h2 className="text-sm font-bold uppercase tracking-wider text-foreground dark:text-white border-b border-border/60 dark:border-white/5 pb-2 print:text-black print:border-gray-200">
+              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/80 border-b border-border/50 pb-2 print:text-black print:border-gray-200">
                 Education
               </h2>
               <div className="space-y-6">
@@ -146,7 +148,7 @@ export default function ResumePage() {
                     <p className="text-xs font-semibold text-accent print:text-emerald-700">
                       {edu.institution}
                     </p>
-                    <p className="text-xs text-muted leading-relaxed mt-1.5 print:text-zinc-600">
+                    <p className="text-xs text-muted leading-[1.72] mt-1.5 print:text-zinc-600">
                       {edu.details}
                     </p>
                   </div>
@@ -156,7 +158,7 @@ export default function ResumePage() {
 
             {/* Section: Selected Projects */}
             <section className="space-y-4">
-              <h2 className="text-sm font-bold uppercase tracking-wider text-foreground dark:text-white border-b border-border/60 dark:border-white/5 pb-2 print:text-black print:border-gray-200">
+              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/80 border-b border-border/50 pb-2 print:text-black print:border-gray-200">
                 Selected Projects
               </h2>
               <div className="space-y-6">
@@ -173,7 +175,7 @@ export default function ResumePage() {
                     <p className="text-[10px] font-mono text-muted dark:text-accent font-bold print:text-emerald-700">
                       Stack: {proj.stack}
                     </p>
-                    <p className="text-xs text-muted leading-relaxed print:text-zinc-600">
+                    <p className="text-xs text-muted leading-[1.72] print:text-zinc-600">
                       {proj.desc}
                     </p>
                   </div>
@@ -187,7 +189,7 @@ export default function ResumePage() {
             
             {/* Section: Technical Skills */}
             <section className="space-y-4">
-              <h2 className="text-sm font-bold uppercase tracking-wider text-foreground dark:text-white border-b border-border/60 dark:border-white/5 pb-2 print:text-black print:border-gray-200">
+              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/80 border-b border-border/50 pb-2 print:text-black print:border-gray-200">
                 Skills
               </h2>
               <div className="space-y-4">
@@ -201,7 +203,7 @@ export default function ResumePage() {
                     <h3 className="text-[10px] font-mono font-bold text-muted uppercase tracking-wider">
                       {skill.category}
                     </h3>
-                    <p className="text-xs text-muted dark:text-foreground font-semibold print:text-black">
+                    <p className="text-xs text-muted dark:text-foreground font-medium leading-[1.7] print:text-black">
                       {skill.list}
                     </p>
                   </div>
@@ -211,7 +213,7 @@ export default function ResumePage() {
 
             {/* Section: Certifications */}
             <section className="space-y-4">
-              <h2 className="text-sm font-bold uppercase tracking-wider text-foreground dark:text-white border-b border-border/60 dark:border-white/5 pb-2 print:text-black print:border-gray-200">
+              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/80 border-b border-border/50 pb-2 print:text-black print:border-gray-200">
                 Certifications
               </h2>
               <ul className="space-y-3.5 list-none pl-0">

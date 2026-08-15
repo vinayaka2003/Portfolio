@@ -53,12 +53,9 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="contact-name" className="block text-xs font-sans font-bold uppercase tracking-wider text-muted mb-2 select-none">
-            Name
-          </label>
+    <form onSubmit={handleSubmit} className="w-full space-y-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="flex flex-col-reverse">
           <input
             required
             id="contact-name"
@@ -66,14 +63,14 @@ export default function ContactForm() {
             type="text"
             autoComplete="name"
             placeholder="Your name"
-            className="w-full px-4 py-3 bg-transparent border border-border rounded-lg text-base text-foreground placeholder-muted/60 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors font-serif"
+            className="peer w-full py-2 bg-transparent border-b border-border text-[16px] text-foreground placeholder-muted/50 focus:outline-none focus:border-accent transition-colors font-serif rounded-none"
           />
+          <label htmlFor="contact-name" className="block text-xs font-sans font-bold uppercase tracking-[0.12em] text-muted/80 mb-2 select-none peer-focus:text-accent transition-colors duration-200">
+            Name
+          </label>
         </div>
 
-        <div>
-          <label htmlFor="contact-email" className="block text-xs font-sans font-bold uppercase tracking-wider text-muted mb-2 select-none">
-            Email
-          </label>
+        <div className="flex flex-col-reverse">
           <input
             required
             id="contact-email"
@@ -81,23 +78,26 @@ export default function ContactForm() {
             type="email"
             autoComplete="email"
             placeholder="your@email.com"
-            className="w-full px-4 py-3 bg-transparent border border-border rounded-lg text-base text-foreground placeholder-muted/60 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-colors font-serif"
+            className="peer w-full py-2 bg-transparent border-b border-border text-[16px] text-foreground placeholder-muted/50 focus:outline-none focus:border-accent transition-colors font-serif rounded-none"
           />
+          <label htmlFor="contact-email" className="block text-xs font-sans font-bold uppercase tracking-[0.12em] text-muted/80 mb-2 select-none peer-focus:text-accent transition-colors duration-200">
+            Email
+          </label>
         </div>
       </div>
 
-      <div>
-        <label htmlFor="contact-message" className="block text-xs font-sans font-bold uppercase tracking-wider text-muted mb-2 select-none">
-          Message
-        </label>
+      <div className="flex flex-col-reverse">
         <textarea
           required
           id="contact-message"
           name="message"
-          rows={5}
+          rows={4}
           placeholder="What's on your mind?"
-          className="w-full px-4 py-3 bg-transparent border border-border rounded-lg text-base text-foreground placeholder-muted/60 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 resize-none transition-colors font-serif"
+          className="peer w-full py-2 bg-transparent border-b border-border text-[16px] text-foreground placeholder-muted/50 focus:outline-none focus:border-accent resize-none transition-colors font-serif rounded-none"
         />
+        <label htmlFor="contact-message" className="block text-xs font-sans font-bold uppercase tracking-[0.12em] text-muted/80 mb-2 select-none peer-focus:text-accent transition-colors duration-200">
+          Message
+        </label>
       </div>
 
       {status.error && (
@@ -109,7 +109,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status.submitting}
-        className="w-fit px-6 py-3 bg-foreground text-background hover:bg-accent hover:text-background font-semibold text-sm rounded-lg transition-colors disabled:opacity-50 font-sans uppercase tracking-wider cursor-pointer"
+        className="w-fit px-5 py-2.5 bg-foreground text-background hover:bg-accent hover:text-background font-semibold text-xs rounded-full transition-colors disabled:opacity-50 font-sans uppercase tracking-wider cursor-pointer"
       >
         {status.submitting ? "Sending..." : "Send message →"}
       </button>

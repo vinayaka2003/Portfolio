@@ -187,7 +187,7 @@ export default function SearchModal() {
     );
   });
 
-  // Listen to trigger events from navbar
+  // Listen to trigger events and keyboard shortcuts (Cmd+K / Ctrl+K)
   useEffect(() => {
     const handleOpenSearch = () => {
       setIsOpen(true);
@@ -195,9 +195,20 @@ export default function SearchModal() {
       setQuery("");
     };
 
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setIsOpen((prev) => !prev);
+        setSelectedIndex(0);
+        setQuery("");
+      }
+    };
+
     window.addEventListener("open-search", handleOpenSearch);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("open-search", handleOpenSearch);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -256,7 +267,7 @@ export default function SearchModal() {
       />
 
       {/* Main Search Panel */}
-      <div className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-gray-200/80 dark:border-white/10 bg-white/95 dark:bg-surface/95 backdrop-blur-xl shadow-2xl flex flex-col max-h-[60vh] transition-all duration-300">
+      <div className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-gray-200/80 dark:border-white/10 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl shadow-2xl flex flex-col max-h-[60vh] transition-all duration-300">
         
         {/* Search Input Area */}
         <div className="flex items-center gap-3 px-6 py-4 border-b border-gray-100 dark:border-white/5">
@@ -298,7 +309,7 @@ export default function SearchModal() {
                   className={`
                     group flex items-center justify-between gap-4 px-4 py-3 rounded-2xl cursor-pointer transition-all duration-150
                     ${isSelected 
-                      ? "bg-gray-100 dark:bg-surface-hover border-transparent" 
+                      ? "bg-gray-100 dark:bg-zinc-800/60 border-transparent" 
                       : "hover:bg-gray-50/50 dark:hover:bg-white/5"
                     }
                   `}

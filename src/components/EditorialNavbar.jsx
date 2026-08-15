@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
-import AnimatedThemeToggler from "@/components/ui/animated-theme-toggler";
+import dynamic from "next/dynamic";
+const AnimatedThemeToggler = dynamic(() => import("@/components/ui/animated-theme-toggler"), { ssr: false });
 
 const links = [
   { href: "/", label: "Home" },
@@ -28,11 +29,6 @@ export default function EditorialNavbar() {
     const handle = requestAnimationFrame(() => setMounted(true));
     return () => cancelAnimationFrame(handle);
   }, []);
-
-  // Close on route change
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
 
   // Close on Escape key
   useEffect(() => {
@@ -73,17 +69,17 @@ export default function EditorialNavbar() {
         <div className="flex flex-col select-none pb-5 border-b border-border/40">
           <Link
             href="/"
-            className="font-serif text-[18.5px] font-bold text-foreground hover:text-accent transition-colors leading-none tracking-tight"
+            className="font-serif text-[21px] md:text-[22px] font-bold text-foreground hover:text-accent transition-colors leading-none tracking-tight"
           >
             Vinayaka S
           </Link>
-          <span className="text-[11px] text-muted/75 uppercase tracking-[0.16em] mt-2 font-sans font-semibold">
+          <span className="text-[10px] md:text-[10.5px] text-muted/90 uppercase tracking-[0.15em] mt-2.5 font-sans font-bold">
             Software Developer
           </span>
         </div>
 
         {/* Navigation Items - Single Flat List */}
-        <nav className="flex flex-col gap-4 text-[13.5px] text-muted font-semibold uppercase tracking-[0.08em] pt-1" aria-label="Primary navigation">
+        <nav className="flex flex-col gap-5 text-[13px] md:text-[13.5px] text-muted font-semibold uppercase tracking-[0.1em] pt-1" aria-label="Primary navigation">
           {links.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -97,7 +93,7 @@ export default function EditorialNavbar() {
                   ${
                     isActive
                       ? "text-foreground font-semibold after:scale-x-100"
-                      : "text-muted/80 hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
+                      : "text-muted/95 hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
                   }
                 `}
               >
@@ -105,12 +101,21 @@ export default function EditorialNavbar() {
               </Link>
             );
           })}
+          
+          {/* Quick Search Shortcut Trigger */}
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-search"))}
+            className="w-full text-left py-1.5 flex items-center justify-between text-muted/85 hover:text-foreground text-[11px] font-sans font-semibold uppercase tracking-[0.1em] border-t border-border/40 mt-4 select-none focus:outline-none cursor-pointer"
+          >
+            <span>Search</span>
+            <span className="text-[9px] font-mono bg-border/40 text-muted/95 px-1.5 py-0.5 rounded border border-border/60">⌘K</span>
+          </button>
         </nav>
 
         {/* Premium Animated Theme Toggle */}
         <div className="pt-4 border-t border-border/40 flex items-center gap-1 w-full -ml-2">
           <AnimatedThemeToggler />
-          <span className="text-[9.5px] text-muted/65 uppercase tracking-[0.1em] font-medium select-none">
+          <span className="text-[10.5px] text-muted uppercase tracking-[0.14em] font-semibold select-none">
             {mounted ? (isDark ? "Dark Mode" : "Light Mode") : "Mode"}
           </span>
         </div>
@@ -205,6 +210,17 @@ export default function EditorialNavbar() {
               </Link>
             );
           })}
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+              setTimeout(() => {
+                window.dispatchEvent(new CustomEvent("open-search"));
+              }, 100);
+            }}
+            className="w-full text-left py-2 text-muted hover:text-foreground border-t border-border/40 mt-2 select-none focus:outline-none cursor-pointer"
+          >
+            <span>Search</span>
+          </button>
         </nav>
       )}
     </header>

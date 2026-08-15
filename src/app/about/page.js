@@ -2,16 +2,17 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="py-8 sm:py-12 font-serif antialiased space-y-12 sm:space-y-16">
-      
-      {/* SECTION 1 — ABOUT */}
-      <section className="space-y-6">
-        <h1 className="text-[34px] sm:text-[44px] font-bold tracking-tight text-foreground mb-6 font-serif leading-tight">
+    <div className="pt-6 sm:pt-8 lg:pt-10 pb-2 font-serif antialiased space-y-12 sm:space-y-16">
+      <header className="mb-10 sm:mb-12">
+        <h1 className="text-[clamp(2.1rem,3.2vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.02] text-foreground font-serif">
           About
         </h1>
-        
-        <div className="space-y-6 text-[17px] sm:text-[18px] leading-[1.65] text-muted font-serif">
-          <p>
+      </header>
+
+      {/* SECTION 1 — ABOUT */}
+      <section className="space-y-6">
+        <div className="space-y-6 text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif">
+          <p className="text-[18.5px] sm:text-[20px] lg:text-[21px] leading-[1.65] text-foreground/90 font-medium tracking-tight">
             I&apos;m Vinayaka S, a software developer and builder currently pursuing my MCA.
           </p>
           <p>
@@ -32,7 +33,7 @@ export default function About() {
           What I care about
         </h2>
         
-        <div className="space-y-6 text-[17px] sm:text-[18px] leading-[1.65] text-muted font-serif">
+        <div className="space-y-6 text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif">
           <div className="space-y-1.5">
             <h3 className="text-lg font-bold text-foreground font-serif">Building useful things</h3>
             <p className="text-muted">
@@ -69,7 +70,7 @@ export default function About() {
           Currently
         </h2>
         
-        <div className="space-y-4 text-[17px] sm:text-[18px] leading-[1.65] text-muted font-serif">
+        <div className="space-y-4 text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif">
           <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-1 sm:gap-4 pb-3.5 border-b border-border/60">
             <span className="font-bold text-foreground">Learning</span>
             <span>AI engineering and system design.</span>
@@ -90,7 +91,7 @@ export default function About() {
       </section>
 
       {/* SECTION 4 — CONNECT */}
-      <section className="text-[17px] sm:text-[18px] leading-[1.65] text-muted font-serif pt-2">
+      <section className="text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif pt-2">
         <p>
           If you&apos;re building something interesting, have a problem worth solving, or simply want to talk about technology,{" "}
           <Link href="/contact" className="text-foreground underline decoration-muted/40 hover:decoration-accent hover:text-accent underline-offset-4 transition-colors">

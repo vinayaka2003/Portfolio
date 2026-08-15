@@ -76,7 +76,9 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning className="min-h-screen bg-background text-foreground font-sans antialiased">
         <Providers>
-          <LayoutWrapper>{children}</LayoutWrapper>
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
         </Providers>
       </body>
     </html>
