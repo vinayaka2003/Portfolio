@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import EditorialNavbar from "./EditorialNavbar";
 import EditorialFooter from "./EditorialFooter";
-import SearchClient from "./SearchClient";
+
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
@@ -36,7 +36,6 @@ export default function LayoutWrapper({ children }) {
         <div className="flex-1 md:border-l md:border-border/60 md:pl-8 lg:pl-10 flex flex-col min-h-[calc(100vh-140px)] pt-0 print:border-none print:pl-0">
           <main key={pathname} className="flex-grow animate-page-fade">
             {children}
-            <SearchClient />
           </main>
           <div className="mt-auto pt-12 sm:pt-16 print:hidden">
             <EditorialFooter />

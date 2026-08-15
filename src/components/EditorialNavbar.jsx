@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
-import { Search } from "lucide-react";
+import SearchClient from "./SearchClient";
 const AnimatedThemeToggler = dynamic(() => import("@/components/ui/animated-theme-toggler"), { ssr: false });
 
 const links = [
@@ -83,19 +83,11 @@ export default function EditorialNavbar() {
         </div>
 
         {/* Search & Theme Controls Group */}
-        <div className="flex items-center gap-2 pb-5 border-b border-border/40 select-none">
-          {/* Quick Search Trigger */}
-          <button
-            onClick={() => window.dispatchEvent(new CustomEvent("open-search"))}
-            className="p-2 rounded-lg hover:bg-border/30 text-muted hover:text-foreground transition-all duration-200 focus:outline-none cursor-pointer"
-            aria-label="Search (⌘K)"
-            title="Search (⌘K)"
-          >
-            <Search className="w-[18px] h-[18px]" />
-          </button>
+        <div className="flex items-center gap-3 pb-5 border-b border-border/40 select-none">
+          <SearchClient />
 
           {/* Premium Animated Theme Toggle */}
-          <div className="flex items-center" title="Toggle theme">
+          <div className="flex items-center shrink-0" title="Toggle theme">
             <AnimatedThemeToggler />
           </div>
         </div>
