@@ -121,7 +121,7 @@ export default function EditorialNavbar() {
       </div>
 
       {/* Mobile Top Header (< md) */}
-      <div className="flex md:hidden justify-between items-center py-4 w-full border-b border-border/60">
+      <div className="flex md:hidden justify-between items-center py-2 w-full border-b border-border/60">
         {showMobileSearch ? (
           <div className="flex items-center gap-3 w-full animate-[fadeIn_0.15s_ease_out_forwards]">
             <SearchClient />
