@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Mail, MapPin, ArrowLeft } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import PrintButton from "./PrintButton";
 
 const GithubIcon = (props) => (
@@ -81,21 +80,15 @@ export default function ResumePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-12 px-6 print:bg-white print:text-black print:p-0 print:py-0 selection:bg-teal-500/30">
+    <div className="w-full bg-background text-foreground print:bg-white print:text-black selection:bg-teal-500/30">
       
       {/* Dynamic Screen Controls Header */}
-      <div className="max-w-4xl mx-auto mb-8 flex items-center justify-between gap-4 print:hidden">
-        <Link 
-          href="/about" 
-          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-foreground transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" /> Back to About
-        </Link>
+      <div className="flex justify-end mb-6 print:hidden">
         <PrintButton />
       </div>
 
       {/* Main Resume Sheet */}
-      <article className="max-w-4xl mx-auto bg-white dark:bg-zinc-900 border border-border/80 dark:border-white/5 rounded-3xl p-8 sm:p-12 shadow-md dark:shadow-2xl print:border-none print:shadow-none print:bg-white print:p-0 print:rounded-none">
+      <article className="w-full bg-white dark:bg-zinc-900 border border-border/80 dark:border-white/5 rounded-3xl p-8 sm:p-12 shadow-md dark:shadow-2xl print:border-none print:shadow-none print:bg-white print:p-0 print:rounded-none">
         
         {/* Profile Header */}
         <header className="border-b border-border/60 dark:border-white/5 pb-8 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6 print:border-gray-200">
