@@ -37,7 +37,7 @@ export default function LayoutWrapper({ children }) {
           <main key={pathname} className="flex-grow animate-page-fade">
             {children}
           </main>
-          <div className="mt-auto pt-12 sm:pt-16 print:hidden">
+          <div className="mt-auto pt-6 sm:pt-8 print:hidden">
             <EditorialFooter />
           </div>
         </div>

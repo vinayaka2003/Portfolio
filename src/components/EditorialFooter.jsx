@@ -37,54 +37,52 @@ export default function EditorialFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-16 sm:mt-24 border-t border-border/60 pt-8 pb-12 w-full font-sans text-xs text-muted">
-      <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
-        {/* Left: Copyright, Name & All rights reserved */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="font-semibold text-foreground">&copy; {currentYear} Vinayaka S. All rights reserved.</span>
-          <span className="text-border select-none">·</span>
-          <span>Bangalore, India</span>
+    <footer className="mt-8 border-t border-border/40 pt-6 pb-8 w-full font-sans text-xs text-muted">
+      <div className="flex flex-col sm:flex-row gap-5 justify-between items-start sm:items-center">
+        {/* Left: Branding Copyright */}
+        <div className="select-none">
+          <p className="font-sans font-black uppercase tracking-[0.14em] text-[10.5px] text-foreground mb-1">
+            Vinayaka S<span className="text-red-600 dark:text-red-500">.</span>
+          </p>
+          <p className="text-[11px] text-muted/80">
+            © {currentYear} Bangalore, India
+          </p>
         </div>
 
-        {/* Right: Platform Icon Links */}
-        <nav aria-label="Social links" className="flex items-center gap-3 text-muted">
+        {/* Right: Textual Platform Links */}
+        <nav aria-label="Social links" className="flex flex-wrap items-center gap-x-3 sm:gap-x-3.5 gap-y-1 text-[9.5px] font-sans font-bold uppercase tracking-widest text-muted">
           <a
             href="https://github.com/vinayaka2003"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub Profile"
-            title="GitHub"
-            className="hover:text-foreground transition-colors p-1"
+            className="hover:text-foreground transition-colors py-1"
           >
-            <GithubIcon className="w-4 h-4" />
+            GitHub
           </a>
+          <span className="text-border/60 select-none">/</span>
           <a
             href="https://linkedin.com/in/vinayaka2003"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn Profile"
-            title="LinkedIn"
-            className="hover:text-foreground transition-colors p-1"
+            className="hover:text-foreground transition-colors py-1"
           >
-            <LinkedinIcon className="w-4 h-4" />
+            LinkedIn
           </a>
+          <span className="text-border/60 select-none">/</span>
           <a
             href="https://twitter.com/vinayaka_s_y"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Twitter Profile"
-            title="Twitter"
-            className="hover:text-foreground transition-colors p-1"
+            className="hover:text-foreground transition-colors py-1"
           >
-            <TwitterIcon className="w-4 h-4" />
+            Twitter
           </a>
+          <span className="text-border/60 select-none">/</span>
           <a
             href="mailto:vinayakayattinamane@gmail.com"
-            aria-label="Email Vinayaka"
-            title="Email"
-            className="hover:text-foreground transition-colors p-1"
+            className="hover:text-foreground transition-colors py-1"
           >
-            <Mail className="w-4 h-4" />
+            Email
           </a>
         </nav>
       </div>
