@@ -65,9 +65,9 @@ export default function EditorialNavbar() {
   return (
     <header className="font-sans w-full select-none relative md:sticky md:top-14 z-40">
       {/* Desktop Left Sidebar Navigation (≥ md) */}
-      <div className="hidden md:flex flex-col gap-8 w-full">
+      <div className="hidden md:flex flex-col gap-5 w-full">
         {/* Branding Header */}
-        <div className="pb-5 border-b border-border/40">
+        <div className="pb-4 border-b border-border/40">
           <Link
             href="/"
             className="flex items-center gap-2 select-none w-fit group"
@@ -83,7 +83,7 @@ export default function EditorialNavbar() {
         </div>
 
         {/* Search & Theme Controls Group */}
-        <div className="flex items-center gap-3 pb-5 border-b border-border/40 select-none">
+        <div className="flex items-center gap-3 pb-4 border-b border-border/40 select-none">
           <SearchClient />
 
           {/* Premium Animated Theme Toggle */}
@@ -93,7 +93,7 @@ export default function EditorialNavbar() {
         </div>
 
         {/* Navigation Items - Single Flat List */}
-        <nav className="flex flex-col gap-5 text-[13px] md:text-[13.5px] text-muted font-semibold uppercase tracking-[0.1em] pt-1" aria-label="Primary navigation">
+        <nav className="flex flex-col gap-4 text-[13px] md:text-[13.5px] text-muted font-semibold uppercase tracking-[0.1em] pt-1" aria-label="Primary navigation">
           {links.map((link) => {
             const isActive =
               pathname === link.href ||
