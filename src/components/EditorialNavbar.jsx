@@ -72,14 +72,15 @@ export default function EditorialNavbar() {
         <div className="pb-4 border-b border-border/40">
           <Link
             href="/"
-            className="flex flex-col select-none group w-fit"
+            className="flex items-center gap-2 select-none w-fit group"
           >
-            <span className="font-sans text-[17px] md:text-[18px] lg:text-[19px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none whitespace-nowrap mb-1">
+            <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none whitespace-nowrap">
               Vinayaka S
             </span>
-            <span className="text-[7.5px] md:text-[8px] font-sans font-black uppercase tracking-[0.18em] text-muted/90 select-none">
-              SOFTWARE <span className="text-red-600 dark:text-red-500 font-black">/</span> DEVELOPER
-            </span>
+            <div className="flex flex-col text-[7.5px] md:text-[8px] font-sans font-bold uppercase tracking-wider text-muted/90 leading-[1.1] border-l border-border/60 pl-2.5 select-none shrink-0">
+              <span>Software</span>
+              <span>Developer</span>
+            </div>
           </Link>
         </div>
 
@@ -146,14 +147,15 @@ export default function EditorialNavbar() {
           <>
             <Link
               href="/"
-              className="flex flex-col select-none shrink-0 group"
+              className="flex items-center gap-2 select-none shrink-0 group"
             >
-              <span className="font-sans text-[14.5px] sm:text-[15.5px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none whitespace-nowrap mb-0.5">
+              <span className="font-sans text-[15px] sm:text-[16px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none whitespace-nowrap">
                 Vinayaka S
               </span>
-              <span className="text-[7px] sm:text-[7.5px] font-sans font-black uppercase tracking-[0.16em] text-muted/90 select-none">
-                SOFTWARE <span className="text-red-600 dark:text-red-500 font-black">/</span> DEVELOPER
-              </span>
+              <div className="flex flex-col text-[7px] sm:text-[7.5px] font-sans font-bold uppercase tracking-wider text-muted/90 leading-[1.1] border-l border-border/60 pl-2 select-none shrink-0">
+                <span>Software</span>
+                <span>Developer</span>
+              </div>
             </Link>
 
             <div className="flex items-center gap-1">
