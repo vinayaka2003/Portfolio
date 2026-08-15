@@ -210,7 +210,7 @@ export default function SearchClient() {
         <input
           ref={inputRef}
           type="text"
-          placeholder="Search... (⌘K)"
+          placeholder="Search"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
