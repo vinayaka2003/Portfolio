@@ -10,12 +10,12 @@ import { Search } from "lucide-react";
 const AnimatedThemeToggler = dynamic(() => import("@/components/ui/animated-theme-toggler"), { ssr: false });
 
 const links = [
-  { href: "/", label: "START" },
-  { href: "/about", label: "WHO I AM" },
-  { href: "/projects", label: "THINGS I BUILD" },
-  { href: "/achievements", label: "ACHIEVEMENTS" },
-  { href: "/resume", label: "RESUME" },
-  { href: "/contact", label: "LET'S TALK" },
+  { href: "/", label: "START", num: "01" },
+  { href: "/about", label: "WHO I AM", num: "02" },
+  { href: "/projects", label: "THINGS I BUILD", num: "03" },
+  { href: "/achievements", label: "ACHIEVEMENTS", num: "04" },
+  { href: "/resume", label: "RESUME", num: "05" },
+  { href: "/contact", label: "LET'S TALK", num: "06" },
 ];
 
 export default function EditorialNavbar() {
@@ -95,7 +95,7 @@ export default function EditorialNavbar() {
         </div>
 
         {/* Navigation Items - Single Flat List */}
-        <nav className="flex flex-col gap-4 text-[13px] md:text-[13.5px] text-muted font-semibold uppercase tracking-[0.1em] pt-1" aria-label="Primary navigation">
+        <nav className="flex flex-col gap-3.5 text-[12.5px] md:text-[13px] text-muted font-semibold uppercase tracking-[0.08em] pt-1" aria-label="Primary navigation">
           {links.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -104,15 +104,20 @@ export default function EditorialNavbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative py-1.5 w-fit transition-colors duration-300 ease-out
+                className={`group relative py-1.5 flex items-center gap-2 w-fit transition-colors duration-300 ease-out
                   after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-accent after:transition-transform after:duration-300 after:ease-out after:origin-left
                   ${
                     isActive
-                      ? "text-foreground font-semibold after:scale-x-100"
-                      : "text-muted/95 hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
+                      ? "text-accent font-bold after:scale-x-100"
+                      : "text-muted hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
                   }
                 `}
               >
+                <span className={`text-[10px] font-mono tracking-normal transition-colors
+                  ${isActive ? "text-accent" : "text-muted/50 group-hover:text-foreground/80"}
+                `}>
+                  {link.num}
+                </span>
                 <span>{link.label}</span>
               </Link>
             );
@@ -240,7 +245,7 @@ export default function EditorialNavbar() {
             </div>
 
             {/* Links list */}
-            <div className="flex flex-col gap-1.5 pt-1">
+            <div className="flex flex-col gap-1 pt-1">
               {links.map((link) => {
                 const isActive =
                   pathname === link.href ||
@@ -258,7 +263,14 @@ export default function EditorialNavbar() {
                       }
                     `}
                   >
-                    <span>{link.label}</span>
+                    <div className="flex items-center gap-2.5">
+                      <span className={`text-[10px] font-mono tracking-normal
+                        ${isActive ? "text-accent" : "text-muted/40"}
+                      `}>
+                        {link.num}
+                      </span>
+                      <span>{link.label}</span>
+                    </div>
                     {isActive && (
                       <span className="text-[10px] text-accent">●</span>
                     )}
