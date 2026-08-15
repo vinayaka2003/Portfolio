@@ -18,7 +18,7 @@ export default function HabeeCraftCaseStudy() {
   ];
 
   return (
-    <div className="pt-6 sm:pt-8 lg:pt-10 pb-16 font-serif antialiased max-w-[720px] lg:max-w-[760px] mx-auto">
+    <div className="pt-6 md:pt-0 pb-16 font-serif antialiased max-w-[720px] lg:max-w-[760px] mx-auto">
       
       {/* CASE STUDY HEADER */}
       <header className="mb-10 sm:mb-12">

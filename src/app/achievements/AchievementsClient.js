@@ -39,7 +39,7 @@ export default function AchievementsClient() {
   ];
 
   return (
-    <div className="pt-6 sm:pt-8 lg:pt-10 pb-2 font-serif antialiased">
+    <div className="pt-6 md:pt-0 pb-2 font-serif antialiased">
       
       {/* Main Content */}
       <header className="mb-10 sm:mb-12">

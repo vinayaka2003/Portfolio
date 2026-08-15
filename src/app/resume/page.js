@@ -82,7 +82,7 @@ export default function ResumePage() {
   ];
 
   return (
-    <div className="w-full bg-background text-foreground print:bg-white print:text-black selection:bg-teal-500/30 pt-6 sm:pt-8 lg:pt-10 pb-2">
+    <div className="w-full bg-background text-foreground print:bg-white print:text-black selection:bg-teal-500/30 pt-6 md:pt-0 pb-2">
       
       {/* Dynamic Screen Controls Header */}
       <div className="flex justify-end mb-6 print:hidden">

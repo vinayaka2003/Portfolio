@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="pt-6 sm:pt-8 lg:pt-10 pb-2 font-serif antialiased space-y-12 sm:space-y-16">
+    <div className="pt-6 md:pt-0 pb-2 font-serif antialiased space-y-12 sm:space-y-16">
       <header className="mb-10 sm:mb-12">
         <h1 className="text-[clamp(2.1rem,3.2vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.02] text-foreground font-serif">
           About
