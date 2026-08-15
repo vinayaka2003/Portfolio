@@ -65,7 +65,7 @@ export default function EditorialNavbar() {
   const isDark = mounted && resolvedTheme === "dark";
 
   return (
-    <header className="font-sans w-full select-none relative md:sticky md:top-14 z-40">
+    <header className="font-sans w-full select-none relative z-40">
       {/* Desktop Left Sidebar Navigation (≥ md) */}
       <div className="hidden md:flex flex-col gap-5 w-full">
         {/* Branding Header */}

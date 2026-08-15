@@ -26,9 +26,9 @@ export default function LayoutWrapper({ children }) {
 
   return (
     <div className="max-w-[1100px] mx-auto px-6 sm:px-8 w-full min-h-screen print:px-0">
-      <div className="flex flex-col md:flex-row pt-0 md:pt-14 pb-16 print:pt-0 print:pb-0">
+      <div className="flex flex-col md:flex-row pt-0 md:pt-6 pb-16 print:pt-0 print:pb-0">
         {/* Left Sidebar Navigation Column (220px-240px) */}
-        <aside className="md:w-[220px] lg:w-[240px] shrink-0 md:sticky md:top-14 md:self-start md:pr-8 lg:pr-10 pb-6 md:pb-0 print:hidden">
+        <aside className="md:w-[220px] lg:w-[240px] shrink-0 md:sticky md:top-6 md:self-start md:pr-8 lg:pr-10 pb-6 md:pb-0 print:hidden">
           <EditorialNavbar />
         </aside>
 
