@@ -8,12 +8,12 @@ import dynamic from "next/dynamic";
 const AnimatedThemeToggler = dynamic(() => import("@/components/ui/animated-theme-toggler"), { ssr: false });
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/achievements", label: "Achievements" },
-  { href: "/resume", label: "Resume" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "START" },
+  { href: "/about", label: "WHO I AM" },
+  { href: "/projects", label: "THINGS I BUILD" },
+  { href: "/achievements", label: "ACHIEVEMENTS" },
+  { href: "/resume", label: "RESUME" },
+  { href: "/contact", label: "LET'S TALK" },
 ];
 
 export default function EditorialNavbar() {
