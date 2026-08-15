@@ -66,16 +66,19 @@ export default function EditorialNavbar() {
       {/* Desktop Left Sidebar Navigation (≥ md) */}
       <div className="hidden md:flex flex-col gap-8 w-full">
         {/* Branding Header */}
-        <div className="flex flex-col select-none pb-5 border-b border-border/40">
+        <div className="pb-5 border-b border-border/40">
           <Link
             href="/"
-            className="font-serif text-[21px] md:text-[22px] font-bold text-foreground hover:text-accent transition-colors leading-none tracking-tight"
+            className="flex items-center gap-3 select-none w-fit group"
           >
-            Vinayaka S
+            <span className="font-sans text-[20px] md:text-[22px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none">
+              Vinayaka S
+            </span>
+            <div className="flex flex-col text-[8.5px] md:text-[9px] font-sans font-bold uppercase tracking-wider text-muted/90 leading-[1.1] border-l border-border/60 pl-3 select-none">
+              <span>Software</span>
+              <span>Developer</span>
+            </div>
           </Link>
-          <span className="text-[10px] md:text-[10.5px] text-muted/90 uppercase tracking-[0.15em] mt-2.5 font-sans font-bold">
-            Software Developer
-          </span>
         </div>
 
         {/* Navigation Items - Single Flat List */}
@@ -125,9 +128,15 @@ export default function EditorialNavbar() {
       <div className="flex md:hidden justify-between items-center py-4 w-full border-b border-border/60">
         <Link
           href="/"
-          className="font-serif text-[17px] font-bold text-foreground hover:text-accent transition-colors tracking-tight whitespace-nowrap shrink-0"
+          className="flex items-center gap-2.5 select-none shrink-0 group"
         >
-          Vinayaka S
+          <span className="font-sans text-[16px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none">
+            Vinayaka S
+          </span>
+          <div className="flex flex-col text-[7.5px] font-sans font-bold uppercase tracking-wider text-muted/90 leading-[1.1] border-l border-border/60 pl-2 select-none">
+            <span>Software</span>
+            <span>Developer</span>
+          </div>
         </Link>
 
         <div className="flex items-center gap-1.5">
