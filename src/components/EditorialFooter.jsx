@@ -37,7 +37,7 @@ export default function EditorialFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-8 border-t border-border/40 pt-6 pb-8 w-full font-sans text-xs text-muted">
+    <footer className="mt-8 border-t border-border/40 pt-6 pb-4 w-full font-sans text-xs text-muted">
       <div className="flex flex-col sm:flex-row gap-5 justify-between items-start sm:items-center">
         {/* Left: Branding Copyright */}
         <div className="select-none">
