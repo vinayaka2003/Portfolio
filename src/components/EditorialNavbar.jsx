@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import SearchClient from "./SearchClient";
+import { Search } from "lucide-react";
 const AnimatedThemeToggler = dynamic(() => import("@/components/ui/animated-theme-toggler"), { ssr: false });
 
 const links = [
@@ -133,7 +134,21 @@ export default function EditorialNavbar() {
           </div>
         </Link>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1">
+          <button
+            onClick={() => {
+              setMenuOpen(true);
+              setTimeout(() => {
+                const searchInput = document.querySelector("#mobile-menu input");
+                searchInput?.focus();
+              }, 120);
+            }}
+            className="p-1 text-muted hover:text-foreground transition-colors focus:outline-none cursor-pointer"
+            aria-label="Search"
+            title="Search"
+          >
+            <Search className="w-[17px] h-[17px]" />
+          </button>
           <AnimatedThemeToggler />
 
           {/* Hamburger button */}
@@ -181,7 +196,7 @@ export default function EditorialNavbar() {
           aria-label="Mobile navigation"
           className="
             absolute top-full right-0 z-50
-            min-w-[160px]
+            w-[240px]
             bg-background/95 dark:bg-background/95 backdrop-blur-md border border-border/80
             rounded-2xl py-4 px-5 mt-2
             shadow-lg
@@ -191,6 +206,11 @@ export default function EditorialNavbar() {
             md:hidden
           "
         >
+          {/* Mobile Search Box */}
+          <div className="pb-3 border-b border-border/40 mb-1">
+            <SearchClient />
+          </div>
+
           {links.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -213,17 +233,6 @@ export default function EditorialNavbar() {
               </Link>
             );
           })}
-          <button
-            onClick={() => {
-              setMenuOpen(false);
-              setTimeout(() => {
-                window.dispatchEvent(new CustomEvent("open-search"));
-              }, 100);
-            }}
-            className="w-full text-left py-2 text-muted hover:text-foreground border-t border-border/40 mt-2 select-none focus:outline-none cursor-pointer"
-          >
-            <span>Search</span>
-          </button>
         </nav>
       )}
     </header>
