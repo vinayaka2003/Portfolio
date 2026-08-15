@@ -84,6 +84,13 @@ export default function ResumePage() {
   return (
     <div className="w-full bg-background text-foreground print:bg-white print:text-black selection:bg-teal-500/30 pt-6 md:pt-0 pb-2">
       
+      {/* Page Header */}
+      <header className="mb-8 sm:mb-10 print:hidden">
+        <h1 className="text-[clamp(2.1rem,3.2vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.02] text-foreground mb-3 font-serif uppercase">
+          RESUME<span className="text-red-600 dark:text-red-500">.</span>
+        </h1>
+      </header>
+
       {/* Dynamic Screen Controls Header */}
       <div className="flex justify-end mb-6 print:hidden">
         <PrintButton />
@@ -96,7 +103,7 @@ export default function ResumePage() {
         <header className="border-b border-border/60 dark:border-white/5 pb-8 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6 print:border-gray-200">
           <div>
             <h1 className="text-4xl font-extrabold text-foreground dark:text-white tracking-tight print:text-black">
-              Vinayaka S.
+              Vinayaka S<span className="text-red-600 dark:text-red-500">.</span>
             </h1>
             <p className="text-lg font-semibold text-accent mt-1 print:text-emerald-700">
               Software Developer

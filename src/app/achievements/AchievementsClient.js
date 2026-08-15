@@ -41,10 +41,9 @@ export default function AchievementsClient() {
   return (
     <div className="pt-6 md:pt-0 pb-2 font-serif antialiased">
       
-      {/* Main Content */}
       <header className="mb-10 sm:mb-12">
-        <h1 className="text-[clamp(2.1rem,3.2vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.02] text-foreground mb-3 font-serif">
-          Achievements
+        <h1 className="text-[clamp(2.1rem,3.2vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.02] text-foreground mb-3 font-serif uppercase">
+          ACHIEVEMENTS<span className="text-red-600 dark:text-red-500">.</span>
         </h1>
         <p className="text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif max-w-[720px]">
           A record of certifications, milestones, and things I&apos;ve completed along the way.

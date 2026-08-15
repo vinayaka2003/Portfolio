@@ -72,15 +72,14 @@ export default function EditorialNavbar() {
         <div className="pb-4 border-b border-border/40">
           <Link
             href="/"
-            className="flex items-center gap-2 select-none w-fit group"
+            className="flex flex-col select-none group w-fit"
           >
-            <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none whitespace-nowrap">
+            <span className="font-sans text-[17px] md:text-[18px] lg:text-[19px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none whitespace-nowrap mb-1">
               Vinayaka S
             </span>
-            <div className="flex flex-col text-[7.5px] md:text-[8px] font-sans font-bold uppercase tracking-wider text-muted/90 leading-[1.1] border-l border-border/60 pl-2.5 select-none shrink-0">
-              <span>Software</span>
-              <span>Developer</span>
-            </div>
+            <span className="text-[7.5px] md:text-[8px] font-sans font-black uppercase tracking-[0.18em] text-muted/90 select-none">
+              SOFTWARE <span className="text-red-600 dark:text-red-500 font-black">/</span> DEVELOPER
+            </span>
           </Link>
         </div>
 
@@ -114,7 +113,7 @@ export default function EditorialNavbar() {
                 `}
               >
                 <span className={`text-[10px] font-mono tracking-normal transition-colors
-                  ${isActive ? "text-accent" : "text-muted/50 group-hover:text-foreground/80"}
+                  ${isActive ? "text-red-600 dark:text-red-500 font-bold" : "text-muted/50 group-hover:text-foreground/80"}
                 `}>
                   {link.num}
                 </span>
@@ -123,6 +122,12 @@ export default function EditorialNavbar() {
             );
           })}
         </nav>
+
+        {/* Status Indicator */}
+        <div className="mt-6 pt-5 border-t border-border/40 text-[9.5px] font-sans font-bold uppercase tracking-[0.14em] text-muted/80 flex items-center gap-1.5 select-none">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-600 dark:bg-red-500 animate-pulse shrink-0" />
+          <span>Available for work</span>
+        </div>
       </div>
 
       {/* Mobile Top Header (< md) */}
@@ -141,15 +146,14 @@ export default function EditorialNavbar() {
           <>
             <Link
               href="/"
-              className="flex items-center gap-2 select-none shrink-0 group"
+              className="flex flex-col select-none shrink-0 group"
             >
-              <span className="font-sans text-[15px] sm:text-[16px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none whitespace-nowrap">
+              <span className="font-sans text-[14.5px] sm:text-[15.5px] font-black uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors leading-none whitespace-nowrap mb-0.5">
                 Vinayaka S
               </span>
-              <div className="flex flex-col text-[7px] sm:text-[7.5px] font-sans font-bold uppercase tracking-wider text-muted/90 leading-[1.1] border-l border-border/60 pl-2 select-none shrink-0">
-                <span>Software</span>
-                <span>Developer</span>
-              </div>
+              <span className="text-[7px] sm:text-[7.5px] font-sans font-black uppercase tracking-[0.16em] text-muted/90 select-none">
+                SOFTWARE <span className="text-red-600 dark:text-red-500 font-black">/</span> DEVELOPER
+              </span>
             </Link>
 
             <div className="flex items-center gap-1">
@@ -265,7 +269,7 @@ export default function EditorialNavbar() {
                   >
                     <div className="flex items-center gap-2.5">
                       <span className={`text-[10px] font-mono tracking-normal
-                        ${isActive ? "text-accent" : "text-muted/40"}
+                        ${isActive ? "text-red-600 dark:text-red-500 font-bold" : "text-muted/40"}
                       `}>
                         {link.num}
                       </span>
@@ -277,6 +281,12 @@ export default function EditorialNavbar() {
                   </Link>
                 );
               })}
+            </div>
+
+            {/* Status Indicator */}
+            <div className="mt-4 pt-4 border-t border-border/40 text-[9px] font-sans font-bold uppercase tracking-[0.14em] text-muted/80 flex items-center justify-center gap-1.5 select-none">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-600 dark:bg-red-500 animate-pulse shrink-0" />
+              <span>Available for work</span>
             </div>
           </nav>
         </>

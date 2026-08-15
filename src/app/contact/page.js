@@ -20,8 +20,8 @@ export default function Contact() {
   return (
     <div className="pt-6 md:pt-0 pb-2 font-serif antialiased space-y-10 sm:space-y-12">
       <header className="mb-10 sm:mb-12">
-        <h1 className="text-[clamp(2.1rem,3.2vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.02] text-foreground font-serif">
-          Contact
+        <h1 className="text-[clamp(2.1rem,3.2vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.02] text-foreground font-serif uppercase">
+          LET&apos;S TALK<span className="text-red-600 dark:text-red-500">.</span>
         </h1>
       </header>
 
