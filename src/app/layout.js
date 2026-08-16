@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
     "sameAs": [
       "https://github.com/vinayaka2003",
       "https://linkedin.com/in/vinayaka2003",
-      "https://twitter.com/vinayaka_s_y"
+      "https://x.com/vinayaka_s_y"
     ]
   };
 

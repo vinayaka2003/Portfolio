@@ -61,8 +61,8 @@ export default function Contact() {
           </a>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-1 sm:gap-4">
-          <span className="font-bold text-foreground font-serif">Twitter</span>
-          <a href="https://twitter.com/vinayaka_s_y" target="_blank" rel="noopener noreferrer" className="text-muted/80 hover:text-accent underline decoration-muted/40 hover:decoration-accent underline-offset-4 transition-colors">
+          <span className="font-bold text-foreground font-serif">X</span>
+          <a href="https://x.com/vinayaka_s_y" target="_blank" rel="noopener noreferrer" className="text-muted/80 hover:text-accent underline decoration-muted/40 hover:decoration-accent underline-offset-4 transition-colors">
             @vinayaka_s_y
           </a>
         </div>

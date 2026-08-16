@@ -121,9 +121,9 @@ export default function SearchClient() {
     },
     {
       category: "Contact Details",
-      title: "Twitter / X Profile",
-      desc: "Open twitter.com/vinayaka_s_y in a new tab.",
-      action: () => window.open("https://twitter.com/vinayaka_s_y", "_blank"),
+      title: "X Profile",
+      desc: "Open x.com/vinayaka_s_y in a new tab.",
+      action: () => window.open("https://x.com/vinayaka_s_y", "_blank"),
       type: "link",
       keywords: "twitter x social news feed platform handle tweet",
     },
