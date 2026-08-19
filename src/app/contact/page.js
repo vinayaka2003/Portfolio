@@ -30,7 +30,7 @@ export default function Contact() {
         <h2 className="text-2xl sm:text-[26px] font-bold text-foreground font-serif leading-snug">
           Let&apos;s talk.
         </h2>
-        <div className="space-y-4 text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif">
+        <div className="space-y-4 text-[17px] sm:text-[18px] leading-[1.68] text-muted font-serif max-w-[640px]">
           <p>
             I&apos;m open to internships, freelance projects, collaborations, and interesting opportunities.
           </p>

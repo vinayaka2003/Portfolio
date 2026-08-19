@@ -63,9 +63,9 @@ export default function ContactForm() {
             type="text"
             autoComplete="name"
             placeholder="Your name"
-            className="peer w-full py-2 bg-transparent border-b border-border text-[16px] text-foreground placeholder-muted/50 focus:outline-none focus:border-accent transition-colors font-serif rounded-none"
+            className="peer w-full py-2 bg-transparent border-b border-border text-[16px] text-foreground placeholder-muted/75 focus:outline-none focus:border-accent transition-colors font-serif rounded-none"
           />
-          <label htmlFor="contact-name" className="block text-xs font-sans font-bold uppercase tracking-[0.12em] text-muted/80 mb-2 select-none peer-focus:text-accent transition-colors duration-200">
+          <label htmlFor="contact-name" className="block text-xs font-sans font-bold uppercase tracking-[0.12em] text-muted mb-2 select-none peer-focus:text-accent transition-colors duration-200">
             Name
           </label>
         </div>
@@ -78,9 +78,9 @@ export default function ContactForm() {
             type="email"
             autoComplete="email"
             placeholder="your@email.com"
-            className="peer w-full py-2 bg-transparent border-b border-border text-[16px] text-foreground placeholder-muted/50 focus:outline-none focus:border-accent transition-colors font-serif rounded-none"
+            className="peer w-full py-2 bg-transparent border-b border-border text-[16px] text-foreground placeholder-muted/75 focus:outline-none focus:border-accent transition-colors font-serif rounded-none"
           />
-          <label htmlFor="contact-email" className="block text-xs font-sans font-bold uppercase tracking-[0.12em] text-muted/80 mb-2 select-none peer-focus:text-accent transition-colors duration-200">
+          <label htmlFor="contact-email" className="block text-xs font-sans font-bold uppercase tracking-[0.12em] text-muted mb-2 select-none peer-focus:text-accent transition-colors duration-200">
             Email
           </label>
         </div>
@@ -93,9 +93,9 @@ export default function ContactForm() {
           name="message"
           rows={4}
           placeholder="What's on your mind?"
-          className="peer w-full py-2 bg-transparent border-b border-border text-[16px] text-foreground placeholder-muted/50 focus:outline-none focus:border-accent resize-none transition-colors font-serif rounded-none"
+          className="peer w-full py-2 bg-transparent border-b border-border text-[16px] text-foreground placeholder-muted/75 focus:outline-none focus:border-accent resize-none transition-colors font-serif rounded-none"
         />
-        <label htmlFor="contact-message" className="block text-xs font-sans font-bold uppercase tracking-[0.12em] text-muted/80 mb-2 select-none peer-focus:text-accent transition-colors duration-200">
+        <label htmlFor="contact-message" className="block text-xs font-sans font-bold uppercase tracking-[0.12em] text-muted mb-2 select-none peer-focus:text-accent transition-colors duration-200">
           Message
         </label>
       </div>

@@ -138,7 +138,7 @@ export default function ResumePage() {
             
             {/* Section: Education */}
             <section className="space-y-4">
-              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/80 border-b border-border/50 pb-2 print:text-black print:border-gray-200">
+              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted border-b border-border/50 pb-2 print:text-black print:border-gray-200">
                 Education
               </h2>
               <div className="space-y-6">
@@ -148,7 +148,7 @@ export default function ResumePage() {
                       <h3 className="text-sm font-bold text-foreground dark:text-white print:text-black">
                         {edu.degree}
                       </h3>
-                      <span className="text-[10px] font-mono text-muted/70 shrink-0 uppercase tracking-wider">
+                      <span className="text-[10px] font-mono text-muted shrink-0 uppercase tracking-wider">
                         {edu.date}
                       </span>
                     </div>
@@ -165,7 +165,7 @@ export default function ResumePage() {
 
             {/* Section: Selected Projects */}
             <section className="space-y-4">
-              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/80 border-b border-border/50 pb-2 print:text-black print:border-gray-200">
+              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted border-b border-border/50 pb-2 print:text-black print:border-gray-200">
                 Selected Projects
               </h2>
               <div className="space-y-6">
@@ -196,7 +196,7 @@ export default function ResumePage() {
             
             {/* Section: Technical Skills */}
             <section className="space-y-4">
-              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/80 border-b border-border/50 pb-2 print:text-black print:border-gray-200">
+              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted border-b border-border/50 pb-2 print:text-black print:border-gray-200">
                 Skills
               </h2>
               <div className="space-y-4">
@@ -220,7 +220,7 @@ export default function ResumePage() {
 
             {/* Section: Certifications */}
             <section className="space-y-4">
-              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/80 border-b border-border/50 pb-2 print:text-black print:border-gray-200">
+              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted border-b border-border/50 pb-2 print:text-black print:border-gray-200">
                 Certifications
               </h2>
               <ul className="space-y-3.5 list-none pl-0">

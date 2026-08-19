@@ -11,7 +11,7 @@ export default function About() {
 
       {/* SECTION 1 — ABOUT */}
       <section className="space-y-6">
-        <div className="space-y-6 text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif">
+        <div className="space-y-6 text-[17px] sm:text-[18px] leading-[1.68] text-muted font-serif max-w-[640px]">
           <p className="text-[18.5px] sm:text-[20px] lg:text-[21px] leading-[1.65] text-foreground/90 font-medium tracking-tight">
             I&apos;m Vinayaka S, a software developer and builder currently pursuing my MCA.
           </p>
@@ -33,29 +33,29 @@ export default function About() {
           What I care about
         </h2>
         
-        <div className="space-y-6 text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif">
-          <div className="space-y-1.5">
+        <div className="space-y-6 text-[17px] sm:text-[18px] leading-[1.68] text-muted font-serif max-w-[640px]">
+          <div className="flex flex-col gap-1">
             <h3 className="text-lg font-bold text-foreground font-serif">Building useful things</h3>
             <p className="text-muted">
               Building for a real problem instead of building something just for the sake of using a technology.
             </p>
           </div>
 
-          <div className="space-y-1.5">
+          <div className="flex flex-col gap-1">
             <h3 className="text-lg font-bold text-foreground font-serif">Learning deeply</h3>
             <p className="text-muted">
               Understanding how things work instead of only following abstractions or tutorials.
             </p>
           </div>
 
-          <div className="space-y-1.5">
+          <div className="flex flex-col gap-1">
             <h3 className="text-lg font-bold text-foreground font-serif">Continuous learning</h3>
             <p className="text-muted">
               Turning what I learn into something real and improving through experimentation.
             </p>
           </div>
 
-          <div className="space-y-1.5">
+          <div className="flex flex-col gap-1">
             <h3 className="text-lg font-bold text-foreground font-serif">Product thinking</h3>
             <p className="text-muted">
               Thinking about users, problems, and value — not just code.
@@ -70,7 +70,7 @@ export default function About() {
           Currently
         </h2>
         
-        <div className="space-y-4 text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif">
+        <div className="space-y-4 text-[17px] sm:text-[18px] leading-[1.68] text-muted font-serif max-w-[640px]">
           <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-1 sm:gap-4 pb-3.5 border-b border-border/60">
             <span className="font-bold text-foreground">Learning</span>
             <span>AI engineering and system design.</span>
@@ -91,7 +91,7 @@ export default function About() {
       </section>
 
       {/* SECTION 4 — CONNECT */}
-      <section className="text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif pt-2">
+      <section className="text-[17px] sm:text-[18px] leading-[1.68] text-muted font-serif pt-2 max-w-[640px]">
         <p>
           If you&apos;re building something interesting, have a problem worth solving, or simply want to talk about technology,{" "}
           <Link href="/contact" className="text-foreground underline decoration-muted/40 hover:decoration-accent hover:text-accent underline-offset-4 transition-colors">

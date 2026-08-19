@@ -45,7 +45,7 @@ export default function AchievementsClient() {
         <h1 className="text-[clamp(2.1rem,3.2vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.02] text-foreground mb-3 font-serif uppercase">
           ACHIEVEMENTS<span className="text-red-600 dark:text-red-500">.</span>
         </h1>
-        <p className="text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif max-w-[720px]">
+        <p className="text-[17px] sm:text-[18px] leading-[1.68] text-muted font-serif max-w-[640px]">
           A record of certifications, milestones, and things I&apos;ve completed along the way.
         </p>
       </header>
@@ -60,20 +60,20 @@ export default function AchievementsClient() {
           {credentials.map((cred) => (
             <div 
               key={cred.title}
-              className="py-5 border-b border-border/50 hover:border-accent/40 flex flex-col space-y-1.5 group transition-colors duration-300"
+              className="py-5 border-b border-border/50 hover:border-accent/40 flex flex-col space-y-0.5 group transition-colors duration-300"
             >
               {/* Title & Year Row */}
               <div className="flex justify-between items-baseline">
                 <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-200 font-serif leading-snug">
                   {cred.title}
                 </h3>
-                <span className="font-mono text-xs text-muted/65 tracking-wider select-none">
+                <span className="font-mono text-xs text-muted tracking-wider select-none">
                   {cred.year}
                 </span>
               </div>
 
               {/* Issuer & Link Row */}
-              <div className="flex justify-between items-center text-sm sm:text-[15px] text-muted/80 font-serif">
+              <div className="flex justify-between items-center text-sm sm:text-[15px] text-muted font-serif">
                 <span>{cred.issuer}</span>
                 <a 
                   href={cred.link} 
@@ -90,7 +90,7 @@ export default function AchievementsClient() {
       </section>
 
       {/* Ending Text */}
-      <p className="text-sm text-muted/65 font-serif mt-10 italic">
+      <p className="text-sm text-muted font-serif mt-10 italic">
         More milestones will be added as I keep building, learning, and shipping.
       </p>
     </div>

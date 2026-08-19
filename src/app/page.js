@@ -33,7 +33,7 @@ export default function Home() {
       </h1>
 
       {/* Story Paragraphs */}
-      <div className="space-y-6 text-[17px] sm:text-[18px] lg:text-[19px] leading-[1.75] text-muted/85 font-serif max-w-[720px] lg:max-w-[760px]">
+      <div className="space-y-6 text-[17px] sm:text-[18px] lg:text-[19px] leading-[1.75] text-muted font-serif max-w-[640px]">
         {/* Normal with drop cap */}
         <p className="first-letter:text-[52px] first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1.5 first-letter:leading-[0.8] first-letter:text-accent select-none">
           After 12th, I wrote the KCET exam but didn&apos;t get the marks I wanted. I got Civil Engineering, but I didn&apos;t want to join it.
@@ -67,7 +67,7 @@ export default function Home() {
       </div>
 
       {/* Visual Separation + Vertical Editorial Navigation Stack */}
-      <div className="mt-12 sm:mt-16 pt-7 sm:pt-8 border-t border-border/50 max-w-[720px] lg:max-w-[760px]">
+      <div className="mt-12 sm:mt-16 pt-7 sm:pt-8 border-t border-border/50 max-w-[640px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 font-serif select-none">
           {heroLinks.map((link) => (
             <Link

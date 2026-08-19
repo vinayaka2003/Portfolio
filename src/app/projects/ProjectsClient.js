@@ -30,18 +30,18 @@ function FeaturedProject({ project }) {
           </div>
 
           {/* Title */}
-          <h3 className="text-xl sm:text-2xl font-bold text-foreground font-serif leading-tight mb-3">
+          <h3 className="text-2xl sm:text-3xl font-bold text-foreground font-serif leading-tight mb-3">
             {project.title}
           </h3>
 
           {/* Description */}
-          <p className="text-[15px] sm:text-base leading-relaxed text-muted/80 font-serif mb-4">
+          <p className="text-[15px] sm:text-base leading-relaxed text-muted font-serif mb-4 max-w-[520px]">
             {project.desc}
           </p>
 
           {/* Highlights List */}
           {project.highlights && (
-            <ul className="list-disc pl-4 space-y-1 text-xs text-muted/75 font-serif mb-4 leading-relaxed">
+            <ul className="list-disc pl-4 space-y-1 text-xs text-muted font-serif mb-4 leading-relaxed">
               {project.highlights.map((h, i) => (
                 <li key={i}>{h}</li>
               ))}
@@ -88,30 +88,30 @@ function FeaturedProject({ project }) {
 function SupportingProject({ project }) {
   return (
     <div className="py-5 border-b border-border/50 hover:border-accent/40 flex flex-col justify-between space-y-3 transition-colors duration-300 group">
-      <div>
-        {/* Title & Year Row */}
-        <div className="flex justify-between items-baseline gap-2">
-          <h4 className="text-base sm:text-[17px] font-bold text-foreground group-hover:text-accent transition-colors duration-200 font-serif leading-snug">
-            {project.title}
-          </h4>
-          <span className="font-mono text-xs text-muted/65 tracking-wider select-none">
-            {project.year}
-          </span>
-        </div>
+        <div className="flex flex-col gap-0.5">
+          {/* Title & Year Row */}
+          <div className="flex justify-between items-baseline gap-2">
+            <h4 className="text-base sm:text-[17px] font-bold text-foreground group-hover:text-accent transition-colors duration-200 font-serif leading-snug">
+              {project.title}
+            </h4>
+            <span className="font-mono text-xs text-muted tracking-wider select-none">
+              {project.year}
+            </span>
+          </div>
 
-        {/* Stack */}
-        <div className="text-[11px] font-sans text-muted/70 uppercase tracking-wider mb-2 mt-0.5">
-          {project.stack}
-        </div>
+          {/* Stack */}
+          <div className="text-[11px] font-sans text-muted uppercase tracking-wider mt-0.5 mb-2">
+            {project.stack}
+          </div>
 
         {/* Description */}
-        <p className="text-[13.5px] sm:text-[14px] leading-relaxed text-muted/80 font-serif">
+        <p className="text-[13.5px] sm:text-[14px] leading-relaxed text-muted font-serif">
           {project.desc}
         </p>
       </div>
 
       {/* Links Row */}
-      <div className="flex items-center gap-4 text-xs font-sans text-muted/80 pt-1 select-none">
+      <div className="flex items-center gap-4 text-xs font-sans text-muted pt-1 select-none">
         {project.demo && (
           <a 
             href={project.demo} 
@@ -167,7 +167,7 @@ export default function ProjectsClient() {
         <h1 className="text-[clamp(2.1rem,3.2vw,3.2rem)] font-bold tracking-[-0.02em] leading-[1.02] text-foreground mb-3 font-serif uppercase">
           THINGS I BUILD<span className="text-red-600 dark:text-red-500">.</span>
         </h1>
-        <p className="text-[17px] sm:text-[18px] leading-[1.68] text-muted/80 font-serif max-w-[720px]">
+        <p className="text-[17px] sm:text-[18px] leading-[1.68] text-muted font-serif max-w-[640px]">
           A collection of things I&apos;ve built, experimented with, and learned from.
         </p>
         
@@ -190,7 +190,7 @@ export default function ProjectsClient() {
       {/* Featured Projects Showcase */}
       {featuredProjects.length > 0 && (
         <section className="space-y-12 mb-16 sm:mb-20">
-          <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/75 border-b border-border/50 pb-2.5 mb-6 select-none">
+          <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted border-b border-border/50 pb-2.5 mb-6 select-none">
             Featured Projects
           </h2>
           <div className="flex flex-col space-y-6">
@@ -204,7 +204,7 @@ export default function ProjectsClient() {
       {/* Supporting Projects Archive Grid */}
       {supportingProjects.length > 0 && (
         <section>
-          <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted/75 border-b border-border/50 pb-2.5 mb-6 select-none">
+          <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-muted border-b border-border/50 pb-2.5 mb-6 select-none">
             Other Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2">
